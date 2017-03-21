@@ -1,0 +1,52 @@
+<div ng-include="'views/head_ql.html'"></div>
+<div class="shw">
+  <nav>
+  	<div class="shw_navxla">
+  		<i class="glyphicon glyphicon-align-justify"></i>
+  	</div>
+  </nav>
+  <section>
+  	<div class="sen">
+  		<h3>业主信息</h3>
+  		<div class="bge">
+  			<div>
+    			<input type="text" class="form-control">
+    			<button type="button" class="btn btn-success">搜索</button>
+  				<button type="button" class="btn btn-success" style="float:left;font-size:0.5rem;line-height:0.35rem;" ui-sref="shwtjyg">添加新员工</button>
+  				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample" style="float: right;width:1.5rem;margin-right:0.5rem;">
+								<i class="glyphicon glyphicon-chevron-down"></i>
+					</button>
+					
+  			</div>
+  			<div class="collapse" id="collapseExample">
+		 		 <div class="well">
+		   			  			<table id="ssd">
+  					<tr>
+  						<td>业主姓名</td>
+  						<td>性别</td>
+  						<td>手机号</td>
+  						<td>业务状态</td>
+  						<td>操作</td>
+  					</tr>
+  					<tr>
+  						<td>欧阳少峰</td>
+  						<td>男</td>
+  						<td>15035815710</td>
+  						<td>正常</td>
+  						<td>
+  								<div class="btn-group open">
+						      <button type="button" style="width: 2rem;margin-left: 0.5rem;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Info <span class="caret"></span></button>
+						      <ul class="dropdown-menu" style="top: 2rem;width: 1rem;min-width: 4rem;">
+						        <li>编辑</li>
+						        <li>删除</li>
+						      </ul>
+						    </div>
+  						</td>
+  					</tr>
+  			</table>
+		 		 </div>
+				</div>
+  		</div>
+  	</div>
+  </section>
+</div>

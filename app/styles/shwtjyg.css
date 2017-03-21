@@ -1,0 +1,34 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.shwbai{
+	background: #fff;
+}
+.shwbai{
+	width:95%;
+	background: #FFF;
+	margin: 0 auto;
+	padding-bottom: 1rem;
+	overflow: hidden;
+	border-radius: 5px;
+	color: #7a7676;
+	font-size: 0.25rem;
+}
+.shwygglnav{
+	width:100%;
+	height:1rem;
+	border-bottom: 1px dashed #ccc;
+	background: #fff;
+}
+header{
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+
+
+
+
+
+

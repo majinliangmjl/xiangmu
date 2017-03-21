@@ -1,0 +1,114 @@
+<div  ng-controller="qll">
+	<div class="ql_head">
+		 	 <div class="qi_head_left icon-menu" ng-click="wdzy()" ng-class="{red:isred}"></div>
+		 	  <div class="qi_head_right">
+		 	  	  <div class="ql_right1 icon-mail4"></div>
+		 	  	  
+		 	  	  <div class="ql_right3" ng-click="q_xlt()">
+		 	  	  	<div class="ql_right2"></div>
+		 	  	  	libai <span class="caret"></span>
+		 	  	  	<div class="ql_gr">
+		 	  	  		<li><i class="fa-user"></i> 个人主页</a></li>
+				        <li><i class="fa-cog"></i> 基本资料</a></li>
+						<li><i class="fa-camera"></i> 更换头像</a></li>
+						<li><i class="fa-cog"></i> 更换密码</a></li>
+						<li><i class="fa-th-list"></i> 我的任务</a></li>		
+				        <li><i class="fa-sign-out"></i> 退出</a></li>
+
+		 	  	  	</div>
+		 	  	  </div>
+		 	  </div>
+		 </div>
+		 
+		 <div class="ql_cont" style="width: auto;float: left;">
+	 	<div class="ql_zc">
+	 		 <div class="ql_zc1">
+	 		 	 <div class="ql_zc1_n">
+	 		 	 	 <i><img src="images/ql_img.jpg"/></i>
+	 		 	 	 <span>libai<br></span>
+	 		 	 	  
+	 		 	 </div>
+	 		 </div>
+	 		 <div class="ql_zc2">
+	 		 	  <ul>
+	 		 	  	<li style="text-indent: 1.2rem;text-align: left;">控制台</li>
+	 		 	  	<li ui-sref="index">
+	 		 	  		<i class="fa icon-fangzi"></i>
+	 		 	  		<span>我的主页</span>
+	 		 	  	</li>
+	 		 	  	<li>
+	 		 	  		<div class="ql_spgl" ng-click="q_xl()" ng-class="{red:isred2}">
+		 		 	  		<i class="fa icon-stack"></i>
+		 		 	  		<span  class="ql_xlone">审批管理<i class="jh glyphicon glyphicon-plus"></i></span>
+	 		 	  		</div>
+	 		 	  		<div class="ql_xl">		 	  			
+		 		 	  		 <p ui-sref='qj'><i class="fa icon-ticket" style="margin-left: -1.2rem;padding-right: 0.28rem;"></i>请假</p>
+		 		 	  		 <p ui-sref='chakan'><i class="fa icon-spinner4" style="margin-left: -1.2rem;padding-right: 0.28rem;"></i>报修</p>
+	 		 	  		</div>
+	 		 	  	</li>
+	 		 	  	<li>
+	 		 	  		<div class="ql_spg2" ng-click="q_xl2()" ng-class="{red:isred3}">
+	 		 	  			<i class="fa icon-user"></i>
+	 		 	  			<span>员工管理<i class="jh2 glyphicon glyphicon-plus"></i></span>
+	 		 	  		</div>
+	 		 	  		
+	 		 	  		<div class="ql_xl2">		 	  			
+		 		 	  		 <p ui-sref='shwgr'><i class="fa icon-key"></i>住户详情</p>
+		 		 	  		 <p ui-sref='guanli'><i class="fa icon-accessibility" style="margin-left: -1.2rem;"></i>职称</p>
+		 		 	  		 
+	 		 	  		</div>
+	 		 	  	</li>
+	 		 	  	<li ui-sref="gonggao">
+	 		 	  		<i class="fa icon-codepen" style="margin-left: -1rem;"></i>
+	 		 	  		<span style="font-size: 0.55rem;">公告</span>
+	 		 	  	</li>
+	 		 	  </ul>
+	 		 </div>
+		 </div>
+</div>
+<div ui-view></div>
+
+<script type="text/javascript">
+	$('.ql_spgl').click(function(){	
+//		$('.jh').addClass('glyphicon glyphicon-minus').remove('glyphicon glyphicon-plus')
+		d = $('.ql_xl').css('display')
+		if(d=='block'){
+			$('.ql_xl').slideUp(800)
+			$('.jh').removeClass('glyphicon glyphicon-minus').addClass('glyphicon glyphicon-plus')
+		}else{
+			$('.ql_xl').slideDown(800)
+			$('.jh').addClass('glyphicon glyphicon-minus')
+		}
+		
+	})
+	$('.ql_spg2').click(function(){
+		c = $('.ql_xl2').css('display')
+		if(c=='block'){
+			$('.ql_xl2').slideUp(800)
+			$('.jh2').removeClass('glyphicon glyphicon-minus').addClass('glyphicon glyphicon-plus')
+		}else{
+			$('.ql_xl2').slideDown(800)
+			$('.jh2').addClass('glyphicon glyphicon-minus')
+		}
+	})
+	var n=0;
+	$('.ql_right3').click(function(){
+		n++;
+		if(n%2==1){
+			$('.ql_gr').css({"height":"7.85rem"})
+			
+		}else{
+			$('.ql_gr').css({"height":"0"})		
+		}	
+	})
+	var a=1;
+	$('.qi_head_left').click(function(){
+		a++;
+		if(a%2==1){
+			$('.ql_zc').css({"transform":"translateX(-7rem)"})
+		}else{
+			$('.ql_zc').css({"transform":"translateX(0px)"})
+		}
+	})
+	
+</script>
