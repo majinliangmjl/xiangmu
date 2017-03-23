@@ -1,5 +1,5 @@
 body,textarea,input,select,option{font-family:"微软雅黑";}
-body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,textarea,input,select,option,form{margin:0}
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,textarea,input,select,option,form{margin:0;border: 0;}
 th,td,ul,ol,textarea,input,select,option{padding:0}
 a{text-decoration:none;color:#333}a,textarea,input{outline:none}
 textarea{overflow:auto;resize:none}
@@ -32,14 +32,14 @@ b{font-weight: normal;}*/
 	background:#fff;
 	position: fixed;
 	z-index: 300;
-	top: 0px;
+	top: -1px;
 }
 .qi_head_left{
 	width: 2.4rem;
-	height: 2.25rem;
+	height: 2.18rem;
 	border-right: #f1f1f1 solid 1px;
 	color: #333;
-	font-size: 1rem;
+	font-size: 0.6rem;
 	float: left;
 	text-align: center;
 	line-height: 2.25rem !important;
@@ -87,13 +87,12 @@ b{font-weight: normal;}*/
         -margin-right: 0.65rem;
     right: 0;
     display: block;
-    transition: 1s;
+    transition: 0.8s;
     overflow: hidden;
 }
 .ql_gr li{
-	line-height: 1.3rem;
-	font-size: 0.35rem;
-	    font-size: 0.45rem;
+	line-height: 1.8rem;
+	font-size: 0.55rem;
     color: #fff;
     text-align: center;
 }
@@ -109,7 +108,7 @@ b{font-weight: normal;}*/
 .jh{
 	position: absolute;
 	right: 0.55rem;
-	top: 0.78rem;
+	top: 0.74rem;
 	font-size: 0.5rem;
 	    font-size: 0.6rem;
     font-family: "微软雅黑";
@@ -117,7 +116,7 @@ b{font-weight: normal;}*/
 .jh2{
 	position: absolute;
 	right: 0.55rem;
-	top: 0.78rem;
+	top: 0.74rem;
 	font-size: 0.5rem;
 	    font-size: 0.6rem;
     font-family: "微软雅黑";
@@ -218,7 +217,7 @@ b{font-weight: normal;}*/
 	margin: 0.8rem 0.65rem 0.8rem 0.65rem;
 }
 .ql_cont_er td{
-	height: 1.55rem;
+	height: 1.95rem;
 }
 .ql_cont_san{
 	height: auto;
