@@ -1,0 +1,140 @@
+<div ng-controller="qll">
+	<div >
+		<div class="zhezao"></div>
+		<div class="container rq form-signin" style="width: 100%;height: 345px; padding: 0;">
+		<form>
+			<div class="roro">系统登录</div>
+			<div class="form-group clearfix srk" style="margin-bottom: 20px;line-height: 29px;">
+				<label for="exampleInputEmail1" class="pull-left">用户：</label>
+				<input type="text" class="form-control abc pull-left yh cgl" style="width: 100%;" placeholder="name" name="uname" ng-model="uname">
+				<span class="ts">X 用户名至少6位</span>
+			</div>
+			<div class="form-group clearfix srk" style="margin-bottom: 20px;line-height: 29px;">
+				<label for="exampleInputPassword1" class="pull-left">密码：</label>
+				<input type="password" class="form-control abc pull-left mm" id="exampleInputPassword1" style="width: 100%;" placeholder="Password" name="pass" ng-model="pass">
+				<span class="ts ts2">X 密码至少8位</span>
+			</div>
+			<button type="button" class="btn btn-success" style="width: 100%;margin-top: 20px;" ng-click="qfn()" >Submit</button>
+		</form>
+		</div>
+		<div class="dl">
+			<div class="modal-dialog modal-sm ddd" role="document">
+				<div class="modal-content text-center row" style="height: 35px;line-height: 36px;">
+					<button class="close"><span>&times;</span></button>
+					
+				</div>
+			</div>
+		</div>
+	<!--<script>
+//		alert(localStorage.getItem('uname'));
+		$('.cgl').val(localStorage.getItem('aaa'))
+		$('input[name=uname]').blur(function(){
+			val = this.value;
+			if(val.length < 6 ){
+				$(this).next().show()
+				$(this).data({"s":0})
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		$('input[name=pass]').blur(function(){
+			val = this.value;
+			if(val.length < 8 ){
+				$(this).data({"s":0})
+				$(this).next().show()
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		$('.btn').click(function(){
+			$('.abc').blur();
+			tot = 0;
+			$('.abc').each(function(){
+				tot+=$(this).data('s')
+				if(tot==2){
+					$.ajax({
+						type:"post",
+						url:"http://47.88.16.225:412/users/login/"+id,
+						async:true,
+						data:{
+			     			username:$('.yh').val(),password:$('.mm').val()
+			     		}
+					}).then(function(e){
+//						alert('登录成功')
+//						$state.go('index')
+						$('.dl').css({"opacity":"1","top":"15px"})
+						$('.row').html('登录成功')
+						$('.zhezao').css({"display":"block"})
+						setTimeout(function () {
+					        $(".dl").css({"opacity":"0"})
+					        $('.row').html('')
+					        $('.zhezao').css({"display":"none"})
+					    },1300);
+						console.log(e)
+					},function(){
+
+					});
+					
+				}
+				else if(tot!=2){
+//					$('.dl').css({"opacity":"1","top":"15px"})
+//					$('.row').html('登录失败')
+//					$('.zhezao').css({"display":"block"})
+					setTimeout(function () {
+				       $('.dl').css({"opacity":"0","top":"-60px"})
+				        $('.zhezao').css({"display":"none"})
+				    },1500);
+				}
+			})	
+//			alert(tot)
+			if(tot!=2){
+				return false
+			}
+		})
+	</script>-->
+	<script>
+		$('.cgl').val(localStorage.getItem('aaa'))
+		$('input[name=uname]').blur(function(){
+			val = this.value;
+			if(val.length < 6 ){
+				$(this).next().show()
+				$(this).data({"s":0})
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		$('input[name=pass]').blur(function(){
+			val = this.value;
+			if(val.length < 8 ){
+				$(this).data({"s":0})
+				$(this).next().show()
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+		$('.btn').click(function(){
+			$('.abc').blur();
+			tot = 0;
+			$('.abc').each(function(){
+				tot+=$(this).data('s')
+				if(tot!=2){
+//					$('.dl').css({"opacity":"1","top":"15px"})
+//					$('.row').html('登录失败')
+//					$('.zhezao').css({"display":"block"})
+					setTimeout(function () {
+				       $('.dl').css({"opacity":"0","top":"-60px"})
+				        $('.zhezao').css({"display":"none"})
+				    },1500);
+				}
+			})	
+//			alert(tot)
+			if(tot!=2){
+				return false
+			}
+		})
+	</script>
+</div>

@@ -10,9 +10,18 @@
  */
 angular.module('shop2App', ['ui.router'])
 .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
-	$stateProvider.state('index', {
+	$stateProvider.state('zc', {
+			url: "/zc",
+			templateUrl: "views/zhuce.html"
+	})
+	.state('login', {
+			url: "/login",
+			templateUrl: "views/login.html"
+	})
+	.state('index', {
 			url: "/index",
-			templateUrl: "views/index_ql.html"
+			templateUrl: "views/index_ql.html",
+			controller:'qll'
 	})
 	.state('manage', {
 			url: "/manage",
@@ -61,7 +70,11 @@ angular.module('shop2App', ['ui.router'])
 			url: "/gonggao",
 			templateUrl: "views/zxx_gl.html"
 	})
-	$urlRouterProvider.when("", "/index")
+	.state("jiben", {
+			url: "/jiben",
+			templateUrl: "views/ql_jbzl.html"
+	})
+	$urlRouterProvider.when("", "/zc")
 
 
 }])
