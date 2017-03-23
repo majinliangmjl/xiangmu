@@ -45,25 +45,36 @@ angular.module('shop2App')
      	}
      	
      }
-//   $scope.zc=function(){
-//   	if($scope.name=='' || $scope.pass==''){
-//   		alert('请输入用户名和密码')
-//   	}else{
-//   		$http({
-//	     		method:'post',
-//	     		url:'http://47.88.16.225:412/users',
-//	     		data:{
-//	     			username:$scope.name,password:$scope.pass
-//   		}
-//	     	}).then(function(e){
+     
+     $scope.zc=function(){
+     	if($scope.name=='' || $scope.pass==''){
+     		alert('请输入用户名和密码')
+     	}else{
+     		$http({
+	     		method:'post',
+	     		url:'http://47.88.16.225:412/users',
+	     		data:{
+	     			username:$scope.name,password:$scope.pass
+     		}
+	     	}).then(function(e){
 //	     		alert('注册成功')
-//	     		$state.go('login')
-//				console.log(e)
-//	     	},function(){
-//	     		alert('error')
-//	     	})
-//   	}
-//   }
+
+				$('.row').html('注册成功')
+				$('.dl').css({"opacity":"1","top":"15px"})
+				$('.zhezao').css({"display":"block"})
+				setTimeout(function () {
+					 $(".dl").css({"opacity":"0"})
+					$('.zhezao').css({"display":"none"})
+					$state.go('login')
+				},1500);
+	     		
+				console.log(e)
+	     	},function(){
+	     		alert('error')
+	     	})
+     	}
+     }
+
 	$scope.loginName="七年";
 	$scope.loginNan="男";
 	$scope.loginSheng="1998-02-03";

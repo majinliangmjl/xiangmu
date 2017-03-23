@@ -54,43 +54,7 @@
 			tot = 0;
 			$('.abc').each(function(){
 				tot+=$(this).data('s')
-				if(tot==2){
-					$.ajax({
-						type:"post",
-						url:"http://47.88.16.225:412/users",
-						async:true,
-						data:{
-			     			username:$('.zc_yh').val(),password:$('.zc_mm').val()
-			     		}
-					}).then(function(e){
-//						alert('登录成功')
-//						$state.go('index')
-						$('.row').html('注册成功')
-						$('.dl').css({"opacity":"1","top":"15px"})
-						$('.zhezao').css({"display":"block"})
-						setTimeout(function () {
-					        $(".dl").css({"opacity":"0"})
-					        $('.row').html('')
-					        $('.zhezao').css({"display":"none"})
-					         location.href='http://localhost:9000/#!/login'
-					    },1500);
-					   
-						console.log(e)
-					},function(){
-						
-					});
-					
-				}
-				else if(tot!=2 || tot!=1){
-//					$('.dl').css({"opacity":"1","top":"15px"})
-//					$('.row').html('注册失败')
-//					$('.zhezao').css({"display":"block"})
-					setTimeout(function () {
-				       $('.dl').css({"opacity":"0","top":"-60px"})
-				        $('.zhezao').css({"display":"none"})
-				        $('.row').html('')
-				    },1500);
-				}
+				
 			})	
 //			alert(tot)
 			if(tot!=2){
