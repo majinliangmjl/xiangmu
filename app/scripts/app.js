@@ -19,7 +19,7 @@ angular.module('shop2App', ['ui.router'])
 			templateUrl: "views/manage.html"
 	})
 	.state('chakan', {
-			url: "/chakan",
+			url: "/chakan/:aaa",
 			templateUrl: "views/chakan.html"
 	})
 	.state('baoxiu', {

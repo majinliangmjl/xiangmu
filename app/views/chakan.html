@@ -1,4 +1,6 @@
+
 <div ng-include="'views/head_ql.html'"></div>
+<div ng-controller="chakan" class="zyx_box">
 <div class="zyx_spl">
 		<p class="zyx_p">审批管理</p>
 	    <p class="zyx_op">OPMS <i>/</i>审批管理 <i>/</i><span>报修单详情</span></p>
@@ -8,48 +10,36 @@
 <div class="zyx_bxd">
 	     <h2>报修单</h2>
 	     <p>by 刚刚 | 2016-09-26 16:38</p>
-	     <table border="" cellspacing="" cellpadding="">
+	     <table border="" cellspacing="" cellpadding="" class="chakantable">
 	     	<tr>
-	     		<td>姓名</td>
-	     		<td>刚刚</td>
-	     		<td>电话</td>
-	     		<td>170</td>
-	     		<td>楼号</td>
-	     		<td>418</td>
+	     		<th>姓名</th>
+	     		<td>{{data.uid}}</td>
 	     	</tr>
 	     	<tr>
-	     		<td>详情</td>
-	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">门窗坏掉</td>
+	     		<th>电话</th>
+	     		<td>{{data.shouji}}</td>
 	     	</tr>
 	     	<tr>
-	     		<td>状态</td>
-	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">已修好</td>
+	     		<th>楼号</th>
+	     		<td>{{data.zhuzhi}}</td>
 	     	</tr>
-	     	
+	     	<tr>
+	     		<th>详情</th>
+	     		<td>{{data.xiangqing}}</td>
+	     	</tr>
+	     	<tr>
+	     		<th>状态</th>
+	     		<td>{{data.zhuangtai}}</td>
+	     	</tr>
 	     </table>
 	     <div class="zyx_jd">
 	     	  <p>审批人进度</p>
-	     	  <a href="">同意</a>
+	     	  <a href="" ng-click="tongyi()">同意</a>
 	     </div>
 </div>
-<div class="zyx_spr">
-	<h1>审批人</h1>
-	<dl>
-		<dt><img src="../images/zyx_2.jpg"/></dt>
-		<dd>
-			<h4><a href="">李四</a><span>2016-09-26 16:38</span></h4>
-			<p><a href="">同意</a><i>批注：魂牵梦绕</i></p>
-		</dd>
-	</dl>
-	<dl>
-		<dt><img src="../images/zyx_3.jpg"/></dt>
-		<dd>
-			<h4><a href="">张三</a><span>2016-09-26 16:38</span></h4>
-			<p><a href="">同意</a><i>批注：同意</i></p>
-		</dd>
-	</dl>
-</div>
+
 
 <div class="zyx_footer">
 	  <p>2016&ensp;@&ensp;Admin&ensp;by&ensp;Lock&ensp;<span>OPMS官网·OPMS手册</span></p>
+</div>
 </div>

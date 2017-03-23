@@ -1,0 +1,144 @@
+body,html{
+	 padding: 0;
+	 margin: 0;
+	 background: #EEEEEE;
+}
+.zyx_box{
+	margin-top: 3rem;
+}
+.zyx_sp{
+
+	 height: 4.1rem;
+     margin-left: 0.675rem;
+     margin-right: 0.675rem;
+     position: relative;
+}
+
+.zyx_p{
+	font-size:1rem;
+	color: #336666;
+	margin-top: 1rem;
+}
+.zyx_op{
+	font-size: 0.5rem;
+	color: #999999;
+}
+.zyx_op i{
+	font-size: 0.5rem;
+	color: #999999;
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+}
+.zyx_op span{
+	font-size: 0.5rem;
+	color: #66cc99;
+}
+
+.zyx_sp>a:nth-child(3){
+	width: 2.425rem;
+	height: 1.375rem;
+	border: #cc6600 1px solid;
+	position: absolute;
+	bottom: 0;
+	background: #ff9933;
+	border-radius: 10%;
+    color: #fff;
+    font-size: 0.625rem;
+    text-align: center;
+    line-height: 1.375rem;
+    font-family: "微软雅黑";
+    display: block;
+    right: 4rem;
+    text-decoration:none;
+}
+.zyx_sp>a:nth-child(4){
+	width: 3.75rem;
+	height: 1.375rem;
+	border: #339933 1px solid;
+	background: #66cc66;
+	position: absolute;
+	border-radius: 10%;
+	right: 0;
+	bottom: 0;
+	font-size: 0.625rem;
+	color: #fff;
+	line-height: 1.375rem;
+	text-align: center;
+	font-family: "微软雅黑";
+	 text-decoration:none;
+}
+.zyx_center{
+	/*width: 90%;*/
+	height: auto;
+	background: #ffffff;
+	border-radius: 3%;
+	 margin-left: 0.675rem;
+     margin-right: 0.675rem;
+	
+}
+.zyx_center_top{
+	 height: 2.325rem;
+	 border-bottom:dashed 1px #999999;
+}
+.zyx_zs{
+	font-size: 0.625rem;
+	line-height: 2.325rem;
+	padding-left: 0.75rem;
+	font-weight: 900;
+	float: left;
+	font-size: 0.5rem;
+}
+.zyx_zs i{
+	padding-left: 0.2rem;
+	padding-right: 0.2rem;
+	font-weight: 900;
+}
+.zyx_center_top>img{
+	width: 1.5rem;
+	height: 1.525rem;
+	float: right;
+	margin-right: 1rem;
+	margin-top: 0.4rem;
+}
+.zyx_center table{
+	width: 100%;
+	border: #EEEEEE 1px solid;
+	margin-top: 0.5rem;
+}
+
+.zyx_table tr th{
+	width: 4rem;
+	height: 2rem;
+	text-align: center;
+	font-size: 0.5rem;
+}
+.zyx_table tr td{
+	width: 4rem;
+	height: 2rem;
+	text-align: center;
+}
+.zyx_table tr td p{
+	width: 2rem;
+	height: 1rem;
+	background: #66cc66;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 10%;
+	color: #fff;
+	line-height: 1rem;
+}
+.zyx_footer{
+	width: 100%;
+	height: 2.3rem;
+	background: #fff;
+	margin-top: 2.9rem;
+}
+.zyx_footer p{
+	line-height: 2.3rem;
+	 margin-left: 0.675rem;
+	 font-size: 0.5rem;
+}
+.zyx_footer span{
+	color: #66cc99;
+	font-size: 0.5rem;
+}

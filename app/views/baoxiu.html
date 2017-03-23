@@ -1,4 +1,5 @@
-<div ng-include="'views/head_ql.html'"></div>
+<div ng-controller="baoxiu">
+	<div ng-include="'views/head_ql.html'"></div>
 <div class="zyx_spl">
 		<p class="zyx_p">审批管理</p>
 	    <p class="zyx_op">OPMS <i>/</i>审批管理 <i>/</i><span>报修单详情</span></p>
@@ -6,42 +7,36 @@
 <div class="zyx_main">
 	  <div class="zyx_herad"></div>
 	  <div class="zyx_bx">
-	  	     <h4>报修明细(1)</h4>
+	  	     <h3>报修明细</h3>
 	  	      <div class="zyx_jine">
 	  	      	<p>报修人姓名</p>
-	  	      	<input type="text" placeholder="请输入姓名"/>
+	  	      	<input type="text" placeholder="请输入姓名" ng-model="xingming"/>
 	  	      </div>
 	  	
 	  	    <div class="zyx_jine">
 	  	      	<p>报修人电话</p>
-	  	      	<input type="tel" placeholder="请输入手机号"/>
+	  	      	<input type="tel" placeholder="请输入手机号" ng-model="tel"/>
 	  	      </div>
 	  	       <div class="zyx_jine">
 	  	      	<p>报修人楼号</p>
-	  	      	<input type="tel" placeholder="请输入楼号"/>
+	  	      	<input type="number" placeholder="请输入楼号" ng-model="num"/>
 	  	      </div>
 	  	 <div class="zyx_mx">
 	  	      	<p>报修的详情</p>
-	  	      	<textarea name="" rows="" cols="" class="zyx_textl"></textarea>
+	  	      	<textarea name="" rows="" cols="" class="zyx_textl" ng-model="xiangqing"></textarea>
 	  	      	<!--<input type="number" placeholder="请输入报销类型,如采购经费,活动经费"/>-->
 	  	      </div>
 	  </div>
 	  <div class="zyx_tj">
-	  	      	    <p>+</p>
-	  	      	    <a href="">添加明细</a>
+	  	      	    <!--<p>+</p>-->
+	  	      	   
 	  	      </div>
-	  	      <div class="zyx_wj">
-	  	      	  <p>图片</p>
-	  	      	  <input type="file" />
-	  	      </div>
-	  	       <div class="zyx_sprl">
-	  	      	  <p>审批人</p>
-	  	      	  <img src="../images/zyx_4.jpg"/>
-	  	      </div>
+	  	     
 	  	      <div class="zyx_bc">
-	  	      	<a href="">提交保存</a>
+	  	      	<a href="" ng-click="zyx_bc()">提交保存</a>
 	  	      </div>
 </div>
 <div class="zyx_footer">
 	  <p>2016&ensp;@&ensp;Admin&ensp;by&ensp;Lock&ensp;<span>OPMS官网·OPMS手册</span></p>
+</div>
 </div>
