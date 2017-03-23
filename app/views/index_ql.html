@@ -43,16 +43,16 @@
 		 	  </div>
 		 	  <div class="ql_cont_san" ng-controller="ds">
 		 	  		公告
-		 	  		<table class="table table-hover table-bordered">
+		 	  		<table class="table table-hover table-striped table-bordered table-condensed">
 		 	  			<tr>
-		 	  				<td>名称</td>
-		 	  				<td>描述</td>
-		 	  				<td>时间</td>
+		 	  				<td style="vertical-align: inherit;">名称</td>
+		 	  				<td style="vertical-align: inherit;">描述</td>
+		 	  				<td style="vertical-align: inherit;">时间</td>
 		 	  			</tr>
 		 	  			<tr ng-repeat="i in data">
-		 	  				<td>{{i.biao}}</td>
-		 	  				<td>{{i.xiangqing}}</td>
-		 	  				<td ng-bind="i.shijian | date:'yyyy年MM月dd日HH:mm:ss'"></td>
+		 	  				<td style="vertical-align: inherit;">{{i.biao}}</td>
+		 	  				<td style="vertical-align: inherit;">{{i.xiangqing}}</td>
+		 	  				<td ng-bind="i.shijian | date:'yyyy年MM月dd日HH:mm:ss'" style="vertical-align: inherit;"></td>
 		 	  			</tr>
 		 	  		</table>
 		 	  </div>	
