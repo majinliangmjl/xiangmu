@@ -52,8 +52,15 @@ angular.module('shop2App')
 	
 //	  公告
 	.controller("zxx_gg", ["$scope", "$http","$state","$timeout", function($scope, $http,$state,$timeout) {
+		$scope.shangxia=true;
+		
 		$scope.zxx_sq = function() {
-			$scope.zxx_ul = !$scope.zxx_ul
+			$scope.zxx_ul = !$scope.zxx_ul;
+			if($scope.shangxia){
+				$scope.shangxia=false;
+			}else{
+				$scope.shangxia=true;
+			}
 		}
 		$http({
 			url: "http://47.88.16.225:412/gonggao",
