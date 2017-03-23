@@ -13,6 +13,7 @@ angular.module('shop2App')
 		$scope.zxx_tjbm_zw="";
 		$scope.zxx_tjbm_zwms="";
 		$scope.zhicheng=[];
+		
 		$scope.zxx_tjbm = function() {
 			
 			if($scope.zxx_tjbm_zw=="" || $scope.zxx_tjbm_zwms==""){
@@ -31,7 +32,7 @@ angular.module('shop2App')
 			}
 
 		}
-
+        
 		$http({
 			url: "http://47.88.16.225:412/zhiwei",
 			method: 'get'
@@ -74,10 +75,10 @@ angular.module('shop2App')
 				data: {
 					biao: $scope.zxx_tjgg_nc,
 					xiangqing: $scope.zxx_tjgg_ms,
-					shijan: '1'
+					shijian:(new Date()).getTime()
 				}
 			}).then(function(reqs) {
-				$state.go("gonggao") 
+				$state.go("gonggao")
 			}, function() {})
 			}
 		}
