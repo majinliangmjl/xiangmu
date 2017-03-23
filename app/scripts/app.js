@@ -55,11 +55,19 @@ angular.module('shop2App', ['ui.router'])
 
 	.state("guanli", {
 			url: "/guanli",
-			templateUrl: "views/zxx_bggl.html"
+			templateUrl: "views/zxxgl_bm.html"
 	})
 	.state("gonggao", {
 			url: "/gonggao",
-			templateUrl: "views/zxx_gl.html"
+			templateUrl: "views/zxxgl_gg.html"
+	})
+	.state("tianjiabm", {
+			url: "/tianjiabm",
+			templateUrl: "views/zxxgl_tjbm.html"
+	})
+	.state("tianjiagg", {
+			url: "/tianjiagg",
+			templateUrl: "views/zxxgl_tjgg.html"
 	})
 	$urlRouterProvider.when("", "/index")
 
