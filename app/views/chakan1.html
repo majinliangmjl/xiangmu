@@ -1,69 +1,62 @@
 <div ng-include="'views/head_ql.html'"></div>
+<div ng-controller="chakan1">
 <div class="zy_spl">
 		<p class="zy_p">审批管理</p>
 	    <p class="zy_op">OPMS <i>/</i>审批管理 <i>/</i><span>请假单详情</span></p>
-	  	    <a ui-sref="qj">返回</a>
-	  	    <a ui-sref="woyaoqingjia">+我要请假</a>
 
 </div>
 <div class="zy_bxd">
 	     <h2>请假单</h2>
-	     <p>by 刚刚 | 2016-09-26 16:38</p>
+	     <p>{{data.uid}}</p>
 	     <table border="" cellspacing="" cellpadding="" class="table">
 	     	<tr>
 	     		<td>姓名</td>
-	     		<td>刚刚</td>
-	     		<td>部门</td>
-	     		<td>行政部</td>
-	     		<td>职位</td>
-	     		<td>部门经理</td>
-	     	</tr>
-	     	
+	     		<td  colspan="5" style="text-align: left;padding-left: 0.8rem;">{{data.uid}}</td>
 	     
-	     	
+	     	</tr>
 	     	<tr>
 	     		<td>类型</td>
-	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">2016-09-26 16:38</td>
+	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">{{data.leixing}}</td>
 	     	</tr>
 	     	<tr>
 	     		<td>事由</td>
-	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">30.2元</td>
+	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">{{data.shiyou}}</td>
 	     	</tr>
 	     	<tr>
 	     		<td>日期</td>
-	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">明细描述</td>
+	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">{{data.shijian1}}</td>
 	     	
 	     	</tr>
 	     	<tr>
-	     		<td>金额</td>
-	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">10.2的活动经费</td>
+	     		<td>状态</td>
+	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">{{data.zhuangtai}}</td>
 	     		
 	     	</tr>
-	   
+	   	<tr>
+	     		<td>请假天数</td>
+	     		<td colspan="5" style="text-align: left;padding-left: 0.8rem;">{{data.shijian2}}</td>
+	     		
+	     	</tr>
 	     </table>
 	     <div class="zy_jd">
 	     	  <p>审批人进度</p>
-	     	  <a href="">同意</a>
+	     	  <a href="" ng-click="tongyi()">同意</a>
 	     </div>
 </div>
 <div class="zy_spr">
 	<h1>审批人</h1>
 	<dl>
-		<dt><img src="../images/zyx_2.jpg"/></dt>
+		
 		<dd>
-			<h4><a href="">李四</a><span>2016-09-26 16:38</span></h4>
-			<p><a href="">同意</a><i>批注：魂牵梦绕</i></p>
+			<h3><a href="">{{data.shenpiren}}</a></h3>
+			<h3>审批结果</h3>
+			<p><a href="" style="display: block; width: 3rem;">{{data.zhuangtai}}</a></p>
 		</dd>
 	</dl>
-	<dl>
-		<dt><img src="../images/zyx_3.jpg"/></dt>
-		<dd>
-			<h4><a href="">张三</a><span>2016-09-26 16:38</span></h4>
-			<p><a href="">同意</a><i>批注：同意</i></p>
-		</dd>
-	</dl>
+
 </div>
 
 <div class="zy_footer">
 	  <p>2016&ensp;@&ensp;Admin&ensp;by&ensp;Lock&ensp;<span>OPMS官网·OPMS手册</span></p>
+</div>
 </div>
