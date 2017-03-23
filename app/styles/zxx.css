@@ -13,6 +13,7 @@ body{
 	background: #eff0f4;
 	padding:0 0.5rem;	
 	padding-bottom: 2rem;
+	margin-top: 2rem;
 }
 .zxx_bm .zxx_yggl p:nth-child(1){
 	font-size: 0.65rem;
@@ -71,6 +72,8 @@ footer{
 	line-height: 0.1rem;
 	background: #fff;
 	text-indent: 1rem;
+	position: fixed;
+	bottom: 0;
 }
 footer a{
 	color: #7CD5B4;
@@ -81,6 +84,7 @@ footer a{
 	background: #fff;
 	padding: 0.8rem 0;
 	border-radius: 5px;	
+	margin-top: 2rem;
 }
 
 .zxx_tjxgg p:nth-child(1){

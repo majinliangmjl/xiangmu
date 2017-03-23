@@ -52,7 +52,15 @@ angular.module('shop2App')
 	
 //	  公告
 	.controller("zxx_gg", ["$scope", "$http","$state","$timeout", function($scope, $http,$state,$timeout) {
+		$scope.shangxia=true;
+
 		$scope.zxx_sq = function() {
+			if($scope.shangxia){
+				$scope.shangxia=false;
+			}else{
+				$scope.shangxia=true;
+			}
+
 			$scope.zxx_ul = !$scope.zxx_ul
 		}
 		$http({

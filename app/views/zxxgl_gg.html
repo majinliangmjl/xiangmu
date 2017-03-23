@@ -7,7 +7,7 @@
 	</div>
 	<div class="zxx_tb">
 		<p>公告管理/总数:<span>{{products.length}}</span>
-			<span ng-click="zxx_sq()" class="glyphicon glyphicon-chevron-down"></span>
+			<span ng-click="zxx_sq()" ng-class="shangxia?'glyphicon glyphicon-chevron-down':'glyphicon glyphicon-chevron-up'"></span>
 		</p>
 		<table class="table table-hover table-bordered" ng-hide="zxx_ul">
 			<tr>
