@@ -1,8 +1,15 @@
 angular.module('shop2App')
 	.controller("zxx_bm", ["$scope", "$http", "$state",function($scope, $http,$state) {
 
+		$scope.shangxia=true;
+		
 		$scope.zxx_sq = function() {
 			$scope.zxx_ul = !$scope.zxx_ul;
+			if($scope.shangxia){
+				$scope.shangxia=false;
+			}else{
+				$scope.shangxia=true;
+			}
 		}
 		$http({
 			url: "http://47.88.16.225:412/zhiwei",
