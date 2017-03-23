@@ -1,0 +1,24 @@
+* {font-size: 12px;font-family: "微软雅黑";}
+			.ts{display: none;color: red;   position: absolute;top: 36px;transition: 0.8s; right: 15px;}
+			.ts2{top: 36px;right: 15px;}
+			.ts3{top: 172px}
+			.rq{border-radius: 5px;animation: dondghua 1s linear;}
+			@-webkit-keyframes donghua{from{opacity: 0;}to{ opacity: 1;}}
+   			.roro{ text-align: center;line-height: 50px;font-size: 24px;}
+   			.zhezao{
+   				background: rgba(0,0,0,.8);width: 100%;height: 980px;position: absolute;
+   				display: none;top: 0px;z-index: 351;
+   			}
+   			.dl{
+   				opacity: 0;transition: 0.8s;position: absolute;
+   				top: 0;left: 0;right: 0;
+   				margin: auto;
+   				z-index: 352;height: 1rem;
+   			}
+   			.ddd{
+   				width: 11rem;
+   				margin: 0 auto;
+   			}
+		.srk{
+			position: relative;
+		}
