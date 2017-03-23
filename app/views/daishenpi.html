@@ -1,0 +1,35 @@
+
+	<div ng-include="'views/head_ql.html'"></div>
+	<div ng-controller="daishenpi" class="zyx_box">
+<div class="zyx_spp">
+		<p class="zyx_p">审批管理</p>
+	    <p class="zyx_op">OPMS <i>/</i>审批管理 <i>/</i><span>报修</span></p>
+	  	    <a ui-sref="manage">报修</a>
+	  	    <a>待审批</a>
+</div>
+<div class="zyx_center">
+	     <div class="zyx_center_top">
+	     	  <div class="zyx_zs">报修 <i>/</i>总数：1</div>
+	     	   <img  ng-src="{{zyx}}" ng-click="img()"/>
+	     </div>
+	     <table border="" cellspacing="" cellpadding="" ng-show="isshow">
+	     	<tr>
+	     		<td>姓名</td>
+	     		<td>电话</td>
+	     		<td>状态</td>
+	     		<td>结果</td>
+	     	</tr>
+	     	<tr ng-repeat="a in data">
+	     		<td>{{a.uid}}</td>
+	     		<td>{{a.shouji}}</td>
+	     		
+	     		
+	     		<td>{{a.zhuangtai}}</td>
+	     		<td ui-sref="chakan({aaa:a.id})">查看</td>
+	     	</tr>
+	     </table>
+</div>
+<div class="zyx_footer">
+	  <p>2016&ensp;@&ensp;Admin&ensp;by&ensp;Lock&ensp;<span>OPMS官网·OPMS手册</span></p>
+</div>
+</div>

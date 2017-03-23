@@ -68,10 +68,7 @@ body,html{
 	margin-right: 0.65rem;
 	background: #fff;
 	margin-top: 0.65rem;
-<<<<<<< HEAD
-=======
 	border-radius: 0.2rem;
->>>>>>> origin/master
 }
 .zy_bxd h2{
 	font-size: 0.8rem;
@@ -83,19 +80,12 @@ body,html{
 	text-align: center;
 	color: #cccccc;
 }
-table{
-<<<<<<< HEAD
-	
-}
-.zy_jd{
-	height: 3.5rem;
-=======
+.table{
 	border: 1px solid #CCCCCC;
 }
 .zy_jd{
 	height: 3.5rem;
 	
->>>>>>> origin/master
 }
 .zy_jd p{
 	width: 3.225rem;
@@ -133,11 +123,8 @@ table{
 	margin-right: 0.65rem;
 	background: #fff;
 	margin-top: 0.65rem;
-<<<<<<< HEAD
-=======
 	border-radius: 0.2rem;
 	height: 110%;
->>>>>>> origin/master
 }
 .zy_spr h1{
 	    font-size: 0.875rem;
@@ -166,8 +153,9 @@ table{
 .zy_spr dl dd{
 	float: left;
 }
-.zy_spr dl dd h4{
+.zy_spr dl dd h3{
 	margin-left: 0.8rem;
+	font-size: 0.6rem;
 }
 
 .zy_spr dl dd span{

@@ -20,15 +20,14 @@ angular.module('shop2App', ['ui.router'])
 	})
 	.state('index', {
 			url: "/index",
-			templateUrl: "views/index_ql.html",
-			controller:'qll'
+			templateUrl: "views/index_ql.html"
 	})
 	.state('manage', {
 			url: "/manage",
 			templateUrl: "views/manage.html"
 	})
 	.state('chakan', {
-			url: "/chakan",
+			url: "/chakan/:aaa",
 			templateUrl: "views/chakan.html"
 	})
 	.state('baoxiu', {
@@ -58,7 +57,7 @@ angular.module('shop2App', ['ui.router'])
 			templateUrl: "views/woyaoqingjia.html"
 	})
 	.state("chakan1", {
-			url: "/chakan1",
+			url: "/chakan1/:ccc",
 			templateUrl: "views/chakan1.html"
 	})
 
