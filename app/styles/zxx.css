@@ -11,7 +11,7 @@ body{
 	width:100%;
 	overflow: hidden;
 	background: #eff0f4;
-	padding:0 1rem;	
+	padding:0 0.5rem;	
 	padding-bottom: 2rem;
 }
 .zxx_bm .zxx_yggl p:nth-child(1){
@@ -44,8 +44,9 @@ body{
 .zxx_bm .zxx_tb{
 	width:100%;
 	background: #fff;
-	padding: 0.5rem 0.8rem 0;
+	padding: 0.5rem 0.3rem 0;
 	border-radius: 5px;
+	margin-bottom: 12rem;
 }
 .zxx_bm .zxx_tb p:nth-child(1){
 	font-weight: bold;
@@ -72,7 +73,7 @@ body{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;	
-	line-height: 0.7rem;
+	line-height: 1rem;
 	text-align: center;
 }
 
@@ -83,17 +84,14 @@ body{
 	flex: 1;
 }
 .zxx_bm .zxx_tb .zxx_ul1 li span:nth-child(2){
-	flex: 4;
+	flex: 3;
 }
 .zxx_bm .zxx_tb .zxx_ul1 li span:nth-child(3){
-	flex: 0.8;
-}
-.zxx_bm .zxx_tb .zxx_ul1 li span:nth-child(4){
 	flex: 1;
 }
 footer{
 	width: 100%;
-	line-height: 0.7rem;
+	line-height: 0.1rem;
 	background: #fff;
 	text-indent: 1rem;
 }
@@ -109,7 +107,7 @@ footer a{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;	
-	line-height: 0.7rem;
+	line-height: 1rem;
 	text-align: center;
 }
 .zxx_bm .zxx_tb .zxx_ul2 li span{
@@ -119,52 +117,54 @@ footer a{
 	line-height: 1rem;
 }
 .zxx_bm .zxx_tb .zxx_ul2 li span:nth-child(1){
-	flex: 2;
+	flex: 1;
 }
 .zxx_bm .zxx_tb .zxx_ul2 li span:nth-child(2){
 	flex: 3;
 }
 .zxx_bm .zxx_tb .zxx_ul2 li span:nth-child(3){
-	flex: 0.8;
-}
-.zxx_bm .zxx_tb .zxx_ul2 li span:nth-child(4){
 	flex: 1;
+	display: block;
 }
 .zxx_tjxgg{
 	width:100%;
 	background: #fff;
-	padding: 0.8rem 0.8rem 0;
+	padding: 0.8rem 0;
 	border-radius: 5px;	
 }
 
 .zxx_tjxgg p:nth-child(1){
 	border-top: 1px dotted #ccc;
-	padding-top: 0.5rem;
-	text-indent: 1.5rem;
+	padding: 1rem 0;
+	text-indent: 1rem;
 }
 .zxx_tjxgg p:nth-child(1) input{
-	border-radius: 2px;
+	border-radius: 5px;
 	border:1px solid #DCDCDC;
 	width: 70%;
+	height: 2rem;
 	margin-left: 1rem;
+	text-indent: 0.5rem;
 }
 .zxx_tjxgg p:nth-child(2){
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
-	padding: 0.5rem 0;
-	text-indent: 1.5rem;
+	padding: 1rem 0;
+	text-indent: 1rem;
 }
 .zxx_tjxgg p:nth-child(2) textarea{
-	border-radius: 2px;
+	border-radius: 5px;
 	border:1px solid #DCDCDC;
 	width: 70%;
+	height: 3rem;
+	text-indent: 0.5rem;
 	margin-left: 1rem;
 	vertical-align: top;
 	
 }
 .zxx_tjxgg p:nth-child(3){
 	padding: 0.5rem 0;
-	text-indent: 3.4rem;
+	text-indent: 13rem;
 }
 .zxx_tjxgg p:nth-child(3) a{
 	padding: 0.2rem;
