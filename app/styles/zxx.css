@@ -72,6 +72,8 @@ footer{
 	line-height: 0.1rem;
 	background: #fff;
 	text-indent: 1rem;
+	position: fixed;
+	bottom: 0;
 }
 footer a{
 	color: #7CD5B4;
