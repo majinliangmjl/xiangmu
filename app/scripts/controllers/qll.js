@@ -1,26 +1,18 @@
 angular.module('shop2App')
 .controller('qll', ["$scope","$http","$state","$stateParams",function ($scope,$http,$state,$stateParams) {
-//	 $scope.bool=false;
-//	  $scope.bool2=false;
-//	  $scope.bool3=false;
-//	  $scope.boox=false;
      $scope.wdzy=function(){
-//   	$scope.bool=!$scope.bool;
      	$scope.isred=!$scope.isred;
      }
      $scope.q_xl=function(){
-//   	$scope.bool2=!$scope.bool2;
      	$scope.isred2=!$scope.isred2;
      }
      $scope.q_xl2=function(){
-//   	$scope.bool3=!$scope.bool3;
      	$scope.isred3=!$scope.isred3;
      }
      
      
      $scope.uname='';
      $scope.pass='';
-//   $scope.xm = localStorage.getItem("xm")
      $scope.qfn=function(){
      	if($scope.uname=='' || $scope.pass==''){
      		alert('请输入用户名和密码')
@@ -72,7 +64,11 @@ angular.module('shop2App')
 //	     	})
 //   	}
 //   }
-	
+	$scope.loginName="七年";
+	$scope.loginNan="男";
+	$scope.loginSheng="1998-02-03";
+	$scope.loginTel='15225505963';
+	$scope.loginEmail='958488568@qq.com';
     $scope.zlxg=function(){
 //  	alert(1);
     	$http({
@@ -89,9 +85,8 @@ angular.module('shop2App')
 		     	uid:localStorage.loginID
 	     	}
 	     }).then(function(e){
-			console.log(e)
+//			console.log(e)
 			alert('修改成功')
-//			localStorage.setItem('xm', e.data.xingming);
 			$state.go('index')
 	     },function(){
 	     	alert('error')
@@ -102,7 +97,7 @@ angular.module('shop2App')
 		     method:'get',
 		     url:'http://47.88.16.225:412/jibenziliao'
     }).then(function(e){
-    	console.log(e)
+//  	console.log(e)
 			for (var k=0;k<e.data.length;k++) {
 				if(e.data[k].uid==localStorage.loginID){
 					$scope.loginQQ=e.data[k].qq;
