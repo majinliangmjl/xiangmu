@@ -27,7 +27,7 @@ angular.module('shop2App', ['ui.router'])
 			templateUrl: "views/manage.html"
 	})
 	.state('chakan', {
-			url: "/chakan",
+			url: "/chakan/:aaa",
 			templateUrl: "views/chakan.html"
 	})
 	.state('baoxiu', {
@@ -57,7 +57,7 @@ angular.module('shop2App', ['ui.router'])
 			templateUrl: "views/woyaoqingjia.html"
 	})
 	.state("chakan1", {
-			url: "/chakan1",
+			url: "/chakan1/:ccc",
 			templateUrl: "views/chakan1.html"
 	})
 
