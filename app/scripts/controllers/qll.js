@@ -80,7 +80,7 @@ angular.module('shop2App')
 		     url:'http://47.88.16.225:412/jibenziliao',
 		     data:{
 		     	xingming:$scope.xm,
-		     	xingbie:$scope.nan,
+		     	xingbei:$scope.nan,
 		     	shengri:$scope.sr,
 		     	youxiang:$scope.yx,
 		     	shoujihao:$scope.sjh,
@@ -106,13 +106,12 @@ angular.module('shop2App')
 			for (var k=0;k<e.data.length;k++) {
 				if(e.data[k].uid==localStorage.loginID){
 					$scope.loginQQ=e.data[k].qq;
-					$scope.loginNan=e.data[k].xingbie;
+					$scope.loginNan=e.data[k].xingbei;
 					$scope.loginSheng=e.data[k].shengri;
 					$scope.loginTel=e.data[k].shoujihao;
 					$scope.loginName=e.data[k].xingming;
 					$scope.loginEmail=e.data[k].youxiang;
 					$scope.loginAdd=e.data[k].zhuzhi;		
-					$scope.xm=e.data[k].qq
 				}
 			}
 	},function(){
