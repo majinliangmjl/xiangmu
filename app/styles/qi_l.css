@@ -6,7 +6,9 @@ textarea{overflow:auto;resize:none}
 table{border-collapse:collapse}
 li{list-style:none}
 a img{border:none}
-
+html{
+	height: 30rem;
+}
 body{background-color:#fff;height: auto;}
 .fl{float:left}.fr{float:right}
 .clear{clear:both;height:0;overflow:hidden}
@@ -206,7 +208,7 @@ b{font-weight: normal;}*/
 	left: 50%;right: 0;bottom: 0;top: 50%;
 	margin-top: -3.25rem;
 	margin-left: -3.25rem;
-	background:url(../images/i-6.jpg) no-repeat;
+	background:url(../images/tx.jpg) no-repeat;
 	background-size: 100% 100%;
 }
 .ql_cont_er{
@@ -256,4 +258,14 @@ background: rgba(102,204,153,1);
 
 .ql_xl p:hover{
 	background: #333;
+}
+.xg{
+	position: relative;
+}
+.xg_name{
+	color: red;
+	position: absolute;
+	    top: 1.5rem;
+    right: 0.5rem;
+    display: none;
 }

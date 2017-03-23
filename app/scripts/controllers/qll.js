@@ -69,9 +69,15 @@ angular.module('shop2App')
 	$scope.loginSheng="1998-02-03";
 	$scope.loginTel='15225505963';
 	$scope.loginEmail='958488568@qq.com';
+	
+	$scope.xm='';$scope.nan='';$scope.sr='';$scope.yx='';
+	$scope.sjh='';$scope.qqh='';$scope.zhuzhi='';
     $scope.zlxg=function(){
 //  	alert(1);
-    	$http({
+		if($scope.xm=='' || $scope.nan=='' || $scope.sr=='' || $scope.yx=='' || $scope.sjh=='' || $scope.qqh=='' || $scope.zhuzhi==''){
+     		alert('请先填写资料')
+     	}else{
+     		$http({
 		     method:'post',
 		     url:'http://47.88.16.225:412/jibenziliao',
 		     data:{
@@ -84,13 +90,22 @@ angular.module('shop2App')
 		     	zhuzhi:$scope.zhuzhi,
 		     	uid:localStorage.loginID
 	     	}
-	     }).then(function(e){
-//			console.log(e)
-			alert('修改成功')
-			$state.go('index')
-	     },function(){
-	     	alert('error')
-	     })
+		     }).then(function(e){
+	//			console.log(e)
+				$('.dl').css({"opacity":"1","top":"5rem"})
+				$('.row').html('登录成功')
+				$('.zhezao').css({"display":"block","height":"32rem"})
+				setTimeout(function () {
+					$('.dl').css({"opacity":"0","top":"-60px"})
+					$('.zhezao').css({"display":"none"})
+					$state.go('index')
+				},1500);
+				
+		     },function(){
+		     	alert('error')
+		     })
+     	}
+    	
     }   
     
     $http({
