@@ -121,5 +121,13 @@ angular.module('shop2App')
     
 }])
 .controller('ds', ["$scope","$http","$state",function ($scope,$http,$state) {
-  	
+  	$http({
+		url: "http://47.88.16.225:412/gonggao",
+		method: 'get'
+	}).then(function(reqs) {
+//		console.log(reqs)
+		$scope.data = reqs.data
+	}, function() {
+		
+	})
 }])

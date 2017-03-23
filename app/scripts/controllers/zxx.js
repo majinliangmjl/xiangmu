@@ -50,7 +50,7 @@ angular.module('shop2App')
 	}])
 	
 //	  公告
-	.controller("zxx_gg", ["$scope", "$http","$state", function($scope, $http,$state) {
+	.controller("zxx_gg", ["$scope", "$http","$state","$timeout", function($scope, $http,$state,$timeout) {
 		$scope.zxx_sq = function() {
 			$scope.zxx_ul = !$scope.zxx_ul
 		}
@@ -62,7 +62,6 @@ angular.module('shop2App')
 		}, function() {})
 		$scope.zxx_tjgg_ms="";
 		$scope.zxx_tjgg_nc="";
-		
 		$scope.zxx_tjgg = function() {
 			
 			if($scope.zxx_tjgg_ms==""||$scope.zxx_tjgg_nc==""){
@@ -74,14 +73,15 @@ angular.module('shop2App')
 				data: {
 					biao: $scope.zxx_tjgg_nc,
 					xiangqing: $scope.zxx_tjgg_ms,
-					shijan: '1'
+					shijian:(new Date()).getTime()
 				}
 			}).then(function(reqs) {
+				console.log(reqs)
 				$state.go("gonggao") 
 			}, function() {})
 			}
 		}
-
+		
 		$http({
 			url: "http://47.88.16.225:412/gonggao",
 			method: 'get'

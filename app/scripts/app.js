@@ -20,8 +20,7 @@ angular.module('shop2App', ['ui.router'])
 	})
 	.state('index', {
 			url: "/index",
-			templateUrl: "views/index_ql.html",
-			controller:'qll'
+			templateUrl: "views/index_ql.html"
 	})
 	.state('manage', {
 			url: "/manage",
