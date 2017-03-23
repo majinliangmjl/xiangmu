@@ -10,16 +10,25 @@
  */
 angular.module('shop2App', ['ui.router'])
 .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
-	$stateProvider.state('index', {
+	$stateProvider.state('zc', {
+			url: "/zc",
+			templateUrl: "views/zhuce.html"
+	})
+	.state('login', {
+			url: "/login",
+			templateUrl: "views/login.html"
+	})
+	.state('index', {
 			url: "/index",
-			templateUrl: "views/index_ql.html"
+			templateUrl: "views/index_ql.html",
+			controller:'qll'
 	})
 	.state('manage', {
 			url: "/manage",
 			templateUrl: "views/manage.html"
 	})
 	.state('chakan', {
-			url: "/chakan",
+			url: "/chakan/:aaa",
 			templateUrl: "views/chakan.html"
 	})
 	.state('baoxiu', {
@@ -55,13 +64,25 @@ angular.module('shop2App', ['ui.router'])
 
 	.state("guanli", {
 			url: "/guanli",
-			templateUrl: "views/zxx_bggl.html"
+			templateUrl: "views/zxxgl_bm.html"
 	})
 	.state("gonggao", {
 			url: "/gonggao",
-			templateUrl: "views/zxx_gl.html"
+			templateUrl: "views/zxxgl_gg.html"
 	})
-	$urlRouterProvider.when("", "/index")
+	.state("tianjiabm", {
+			url: "/tianjiabm",
+			templateUrl: "views/zxxgl_tjbm.html"
+	})
+	.state("tianjiagg", {
+			url: "/tianjiagg",
+			templateUrl: "views/zxxgl_tjgg.html"
+	})
+	.state("jiben", {
+			url: "/jiben",
+			templateUrl: "views/ql_jbzl.html"
+	})
+	$urlRouterProvider.when("", "/zc")
 
 
 }])

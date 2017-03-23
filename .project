@@ -14,4 +14,27 @@
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
+	<filteredResources>
+		<filter>
+<<<<<<< HEAD
+			<id>1490096747067</id>
+=======
+<<<<<<< HEAD
+			<id>1490095352321</id>
+=======
+<<<<<<< HEAD
+			<id>1490146511251</id>
+=======
+			<id>1490094710315</id>
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>

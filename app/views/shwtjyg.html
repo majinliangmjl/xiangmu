@@ -1,25 +1,22 @@
 <div ng-include="'views/head_ql.html'"></div>
 <div class="shw" ng-controller="myCtrl">
-  <nav>
-  	<div class="shw_navxla">
-  		<i class="glyphicon glyphicon-align-justify"></i>
-  	</div>
-  </nav>
   <section>
   	<div class="sen">
   		<h3>业主信息</h3>
+  		<br />
 		<div class="shwbai" style="background: #fff;">
 			<div class="shwygglnav"></div>
 			
 			<div class="panel-body">
-              <form class="form-horizontal adminex-form" id="userprofile-form" novalidate="novalidate" ng-submit="check()">
-                <header><b> 基本信息 </b></header>
+              <form class="form-horizontal adminex-form" id="userprofile-form" novalidate="novalidate" ng-submit="check()" style="padding: 0;background:#fff;" name="myForm">
+                <div><b> 基本信息 </b></div>
                 <div class="form-group">
                 	<br />
                   <label class="col-sm-2 col-sm-2 control-label">用户名</label>
                   <div class="col-sm-10">
-                    <input type="text" name="username" value="" class="form-control" placeholder="请填写用户名" ng-model="username" ng-blur="user()" maxlength="4">
-                 		<span style="color:red;" ng-show="sHow">用户名不能为空</span>
+                    <input type="text" name="user" value="" class="form-control" placeholder="请填写用户名" ng-model="user" maxlength="4" required  >
+										<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+										<span ng-show="myForm.user.$error.required">用户名是必须的。</span>
                   </div>
                 </div>
                
@@ -48,7 +45,7 @@
                     </select>
                   </div>
                 </div>
-                <header> <b>帐号信息</b> </header>
+                <div> <b>帐号信息</b> </div>
                 <br />
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">性别</label>
@@ -59,27 +56,43 @@
                       <option value="男">男</option>
                       <option value="女">女</option>
                     </select>
+                    <span ng-show="gh3" style="color:red;">请选择</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 col-sm-2 control-label">状态</label>
+                  <div class="col-sm-10">
+                    <select name="position" class="form-control" ng-model="zt" id="zt"> 
+                    	<option value="">请选择</option>
+                    	<option value="正常">正常</option>
+                      <option value="未处理">未处理</option>
+                    </select>
+                    <span ng-show="gh4" style="color:red;">请选择</span>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">业主邮箱</label>
                   <div class="col-sm-10">
-                    <input type="email" name="email" value="" class="form-control" placeholder="" ng-model="email" ng-blur="emailyz()" id="email">
-                    <span style="color:red;" ng-show="sHow2">邮箱不能为空或者邮箱格式不对！</span>
+                    <input type="email" name="email" value="" class="form-control" placeholder="" ng-model="email" ng-blur="emailyz()" id="email" required>
+										<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+										<span ng-show="myForm.email.$error.required">邮箱是必须的。</span>
+										<span ng-show="myForm.email.$error.email">非法的邮箱地址。</span>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">手机号</label>
+                  <label class="col-sm-2 col-sm-2 control-label">手机号码</label>
                   <div class="col-sm-10">
-                    <input type="number" name="phone" maxlength="11" value="" class="form-control" placeholder="手机号" ng-model="phone" id="phone" ng-blur="phone2()">
-                 		 <span style="color:red;" ng-show="sHow3">手机号不能为空或者手机号格式不对！</span>
+                    <input type="text" name="phone"  id="phone" class="form-control" placeholder="手机号码" ng-model="phone">
+                    <span ng-show="gh2" style="color:red;">手机号码不能为空!</span>
+                    <span ng-show="gh5" style="color:red;">手机号码格式错误！!</span>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">住址</label>
                   <div class="col-sm-10">
                     <input type="text" name="address" value="" class="form-control" placeholder="详情住址" ng-model="address">
+                    <span ng-show="gh" style="color:red;">地址不能为空!</span>
                   </div>
                 </div>
                
