@@ -1,56 +1,65 @@
  angular.module('shop2App')
-.controller("myCtrl", function($scope) {
-	 $scope.email = ""
-	 $scope.username = ""
-	 $scope.zhiwei = ""
+.controller("myCtrl",["$scope","$http","$state",function($scope,$http,$state){
+	 $scope.email = ""    //邮箱
+	 $scope.username = "" //用户名
+	 $scope.phone = ""   //手机号
+	 $scope.address = "" //住址
 	 $scope.sex = ""
-	 $scope.phone = ""
-	 $scope.address = ""
-	 $scope.user = function(){
-	 	if( $scope.username == ""){
-	 		$scope.sHow = true
-	 	}else{
-	 		$scope.sHow = false
-	 	}
-	 	
-	 }
-	 
-	 $scope.emailyz = function(){
-	 	var name = $("#email").val()
-	 	var yx = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/
-	 	if($scope.email == ""){
-	 		$scope.sHow2 = true
-	 	}else{
-	 		$scope.sHow2 = false
-	 	}
-	 	if(!yx.test(name)){
-	 		$scope.sHow2 = true
-	 	}else{
-	 		$scope.sHow2 = false
-	 	}
-	 }
-	 $scope.phone2 = function(){
-	 	var phone = $("#phone").val()
-	 	var phone2 = /^0{0,1}(13[4-9]|15[7-9]|15[0-2]|18[7-8])[0-9]{8}$/
-	 	if($scope.phone == ""){
-	 		$scope.sHow3 = true
-	 	}else{
-	 		$scope.sHow3 = false
-	 	}
-	 	
-	 	if(!phone2.test(phone)){
-	 		$scope.sHow3 = true
-	 	}else{
-	 		$scope.sHow3 = false
-	 	}
-
-	 }
+	 $scope.zt = ""
+ 	 $scope.user = '用户名';
+ 	 
+   	 $scope.email = 'john.doe@gmail.com';
+	
     $scope.check = function(){
-    	 var zhiwei = $("#xiala").val();
- 		 var sex = $("#sex").val();
- 		 localStorage.sex = $scope.sex
-		localStorage.zhiwei = $scope.zhiwei
-		localStorage.username = $scope.username
-    	
-    }
-});
+		if($scope.user == "" || $scope.phone == "" || $scope.zt == ""|| $scope.email == "" || $scope.address == "" || $scope.sex == ""){
+			var tel = $("#phone").val()	
+			var reg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/
+			if($scope.address == ""){
+				$scope.gh = true
+			}else{
+				$scope.gh = false
+			}
+			if($scope.phone == "" ){
+				$scope.gh2 = true
+			}else{
+				$scope.gh2 = false
+				
+				if(!reg.test(tel)){
+					$scope.gh5 = true
+				}else{
+					$scope.gh5 = false
+				}
+
+			}
+			if($scope.sex == ""){
+				$scope.gh3 = true
+			}else{
+				$scope.gh3 = false
+			}
+			if($scope.zt == ""){
+				$scope.gh4 = true
+			}else{
+				$scope.gh4 = false
+			}
+		}else{
+			$http({
+				url: "http://47.88.16.225:412/xiangqing",
+				method:'post',
+				data:{
+					uid : $scope.user,
+					shouji : $scope.phone,
+					zhuzhi : $scope.address,
+					zhuangtai : $scope.zt,
+					sex : $scope.sex
+				}
+			}).then(function(reqs) {
+				
+				$state.go("shwgr")
+				 console.log(reqs)
+				 
+			}, function() {
+				console.log("请求失败")
+			})
+		}
+	}
+}])

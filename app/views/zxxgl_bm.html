@@ -1,0 +1,25 @@
+<div>
+	<div ng-include="'views/head_ql.html'"></div>
+<div class="zxx_bm" ng-controller="zxx_bm">
+	<div class="zxx_yggl">
+		<p>员工管理</p>
+		<p><span><a href="">OPMS</a></span> /<span><a href="">部门管理</a></span>/<span >部门</span><span ui-sref="tianjiabm">添加新部门</span></p>
+	</div>
+	<div class="zxx_tb">
+		<p>部门管理/总数:<span class=""></span>
+			<span ng-click="zxx_sq()" class="glyphicon glyphicon-chevron-down"></span>
+		</p>
+		<ul class="zxx_ul2" ng-hide="zxx_ul">
+			<li ><span>职位</span><span>描述</span><span>操作</span></li>
+			<li ng-repeat="a in zhicheng">
+				<span>{{a.zhiwei}}</span>
+				<span>{{a.miaoshu}}</span>
+				<span><a ng-click='zx_remove($index)'>删除</a></span></li>
+		</ul>
+	</div>
+	
+</div>
+<footer>2016&copy;Admin by Lock
+	<a href="">OPMS官网.OPMS手册</a>
+</footer>
+</div>
