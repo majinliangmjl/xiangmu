@@ -14,9 +14,16 @@
 				<input type="password" class="form-control abc zc_mm pull-left" id="exampleInputPassword1" style="width: 100%;" placeholder="Password" name="pass" ng-model="pass">
 				<span class="ts ts2">X 密码至少8位</span>
 			</div>
-			<button type="button" class="btn btn-success" style="width: 100%;height: 1.8rem; margin-top: 1.5rem;" ng-click="zc()">Submit</button>
+			
+			<!--<div class="form-group clearfix srk" style="margin-bottom: 20px;line-height: 29px;">
+				<div id="v_container" style="width: 200px;height: 50px;"></div>
+				<input type="text" class="form-control abc zc_mm pull-left" id="code_input" style="width: 100%;margin-top: 0.9rem;" placeholder="请输入你的验证码" name="yzm" maxlength="4">
+				<span class="ts ts2 yzm">X 验证码不正确</span>
+			</div>-->
+			<button type="button" class="btn btn-success" style="width: 100%;height: 1.8rem; margin-top: 0.9rem;" ng-click="zc()">Submit</button>
 		</form>
 		</div>
+		
 		
 		<div class="dl">
 			<div class="modal-dialog modal-sm ddd" role="document">
@@ -27,6 +34,7 @@
 			</div>
 		</div>
 <script>
+//   var verifyCode = new GVerify("v_container");
 		$('input[name=uname]').blur(function(){
 			val = this.value;
 			if(val.length < 6 ){
@@ -47,14 +55,43 @@
 				$(this).next().hide()
 			}
 		})
-
+		$('input[name=yzm]').blur(function(){
+			val = this.value;
+			if(val.length < 4 ){
+				$(this).data({"s":0})
+				$(this).next().show()
+			}else{
+				$(this).data({"s":1})
+				$(this).next().hide()
+			}
+		})
+//		var res = verifyCode.validate(document.getElementById("code_input").value);
+//
+//   	$('.abc').blur();
+//			tot = 0;
+//		$('.abc').each(function(){
+//			tot+=$(this).data('s')
+//		})	
+////			alert(tot)
+//		if(tot!=3){
+//			alert('资料不完整')
+//				return false
+//		}
+//		if(res){
+////			alert("验证正确");
+//		}else{
+//			alert("信息有误");
+//			return
+//		}
 		$('.btn').click(function(){
 			localStorage.setItem('aaa',$('.zc_yh').val());
 			$('.abc').blur();
 			tot = 0;
 			$('.abc').each(function(){
 				tot+=$(this).data('s')
-				
+				if(tot!=2 || tot==1){
+					return false
+				}
 			})	
 //			alert(tot)
 			if(tot!=2){

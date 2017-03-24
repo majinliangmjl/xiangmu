@@ -13,6 +13,7 @@ angular.module('shop2App')
      
      $scope.uname='';
      $scope.pass='';
+
      $scope.qfn=function(){
      	if($scope.uname=='' || $scope.pass==''){
      		alert('请输入用户名和密码')
@@ -45,10 +46,28 @@ angular.module('shop2App')
      	}
      	
      }
-     
+
      $scope.zc=function(){
+//   	var res = verifyCode.validate(document.getElementById("code_input").value);
+
+     	$('.abc').blur();
+			tot = 0;
+		$('.abc').each(function(){
+			tot+=$(this).data('s')
+		})	
+//			alert(tot)
+		if(tot!=2){
+			alert('资料不完整')
+				return false
+		}
+//		if(res){
+////			alert("验证正确");
+//		}else{
+//			alert("信息有误");
+//			return
+//		}
      	if($scope.name=='' || $scope.pass==''){
-     		alert('请输入用户名和密码')
+     		alert('请输入用户名和密码')   
      	}else{
      		$http({
 	     		method:'post',
@@ -70,7 +89,7 @@ angular.module('shop2App')
 	     		
 				console.log(e)
 	     	},function(){
-	     		alert('error')
+	     		alert('注册失败')
 	     	})
      	}
      }
