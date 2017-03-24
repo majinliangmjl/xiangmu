@@ -14,7 +14,7 @@
 				<input type="password" class="form-control abc pull-left mm" id="exampleInputPassword1" style="width: 100%;" placeholder="Password" name="pass" ng-model="pass">
 				<span class="ts ts2">X 密码至少8位</span>
 			</div>
-			<button type="button" class="btn btn-success" style="width: 100%;margin-top: 20px;" ng-click="qfn()" >Submit</button>
+			<button type="button" class="btn btn-success" style="width: 100%;height: 1.8rem; margin-top: 1.5rem;" ng-click="qfn()" >login</button>
 		</form>
 		</div>
 		<div class="dl">
@@ -95,7 +95,6 @@
 		})
 	</script>-->
 	<script>
-		$('.cgl').val(localStorage.getItem('aaa'))
 		$('input[name=uname]').blur(function(){
 			val = this.value;
 			if(val.length < 6 ){
@@ -121,15 +120,7 @@
 			tot = 0;
 			$('.abc').each(function(){
 				tot+=$(this).data('s')
-				if(tot!=2){
-//					$('.dl').css({"opacity":"1","top":"15px"})
-//					$('.row').html('登录失败')
-//					$('.zhezao').css({"display":"block"})
-					setTimeout(function () {
-				       $('.dl').css({"opacity":"0","top":"-60px"})
-				        $('.zhezao').css({"display":"none"})
-				    },1500);
-				}
+	
 			})	
 //			alert(tot)
 			if(tot!=2){

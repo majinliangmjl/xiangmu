@@ -1,6 +1,6 @@
 <div  ng-controller="qll">
 	<div class="ql_head">
-		 	 <div class="qi_head_left icon-menu" ng-click="wdzy()" ng-class="{red:isred}"></div>
+		 	 <div class="qi_head_left glyphicon glyphicon-align-justify" ng-click="wdzy()" ng-class="{red:isred}"></div>
 		 	  <div class="qi_head_right">
 		 	  	  
 		 	  	  <div class="ql_right3" ng-click="q_xlt()">
@@ -9,7 +9,6 @@
 		 	  	  	<div class="ql_gr">
 		 	  	  		<li ui-sref='index'><i class="fa-user"></i> 个人主页</a></li>
 				        <li ui-sref='jiben'><i class="fa-cog"></i> 修改资料</a></li>
-						<li><i class="fa-camera"></i> 更换头像</a></li>	
 				        <li ui-sref='login'><i class="fa-sign-out"></i> 退出</a></li>
 
 		 	  	  	</div>
@@ -30,34 +29,34 @@
 	 		 	  <ul>
 	 		 	  	<li style="text-indent: 1.2rem;text-align: left;">控制台</li>
 	 		 	  	<li ui-sref="index">
-	 		 	  		<i class="fa icon-fangzi"></i>
+	 		 	  		<i class="fa glyphicon glyphicon-folder-open"></i>
 	 		 	  		<span>我的主页</span>
 	 		 	  	</li>
 	 		 	  	<li>
 	 		 	  		<div class="ql_spgl" ng-click="q_xl()" ng-class="{red:isred2}">
-		 		 	  		<i class="fa icon-stack"></i>
+		 		 	  		<i class="fa glyphicon glyphicon-indent-right"></i>
 		 		 	  		<span  class="ql_xlone">审批管理<i class="jh glyphicon glyphicon-plus"></i></span>
 	 		 	  		</div>
 	 		 	  		<div class="ql_xl">		 	  			
-		 		 	  		 <p ui-sref='qj'><i class="fa icon-ticket" style="margin-left: -1.2rem;padding-right: 0.28rem;"></i>请假</p>
-		 		 	  		 <p ui-sref='manage'><i class="fa icon-spinner4" style="margin-left: -1.2rem;padding-right: 0.28rem;"></i>报修</p>
+		 		 	  		 <p ui-sref='qj'><i class="fa glyphicon glyphicon-eye-open" style="margin-left: -1rem;padding-right: 0.28rem;"></i>请假</p>
+		 		 	  		 <p ui-sref='manage'><i class="fa glyphicon glyphicon-wrench" style="margin-left: -1rem;padding-right: 0.28rem;"></i>报修</p>
 	 		 	  		</div>
 	 		 	  	</li>
 	 		 	  	<li>
 	 		 	  		<div class="ql_spg2" ng-click="q_xl2()" ng-class="{red:isred3}">
-	 		 	  			<i class="fa icon-user"></i>
+	 		 	  			<i class="fa glyphicon glyphicon-user"></i>
 	 		 	  			<span>员工管理<i class="jh2 glyphicon glyphicon-plus"></i></span>
 	 		 	  		</div>
 	 		 	  		
 	 		 	  		<div class="ql_xl2">		 	  			
-		 		 	  		 <p ui-sref='shwgr'><i class="fa icon-key"></i>住户详情</p>
-		 		 	  		 <p ui-sref='guanli'><i class="fa icon-accessibility" style="margin-left: -1.2rem;"></i>职称</p>
+		 		 	  		 <p ui-sref='shwgr'><i class="fa glyphicon glyphicon-home" style="margin-left: -0.2rem;" ></i>员工详情</p>
+		 		 	  		 <p ui-sref='guanli'><i class="fa glyphicon glyphicon-leaf" style="margin-left: -1.2rem;"></i>职称</p>
 		 		 	  		 
 	 		 	  		</div>
 	 		 	  	</li>
 	 		 	  	<li ui-sref="gonggao">
-	 		 	  		<i class="fa icon-codepen" style="margin-left: -1rem;"></i>
-	 		 	  		<span style="font-size: 0.55rem;">公告</span>
+	 		 	  		<i class="fa glyphicon glyphicon-edit" style="margin-left: -1.05rem;"></i>
+	 		 	  		<span>公告</span>
 	 		 	  	</li>
 	 		 	  </ul>
 	 		 </div>
@@ -70,10 +69,10 @@
 //		$('.jh').addClass('glyphicon glyphicon-minus').remove('glyphicon glyphicon-plus')
 		d = $('.ql_xl').css('display')
 		if(d=='block'){
-			$('.ql_xl').slideUp(800)
+			$('.ql_xl').slideUp(600)
 			$('.jh').removeClass('glyphicon glyphicon-minus').addClass('glyphicon glyphicon-plus')
 		}else{
-			$('.ql_xl').slideDown(800)
+			$('.ql_xl').slideDown(600)
 			$('.jh').addClass('glyphicon glyphicon-minus')
 		}
 		
@@ -81,10 +80,10 @@
 	$('.ql_spg2').click(function(){
 		c = $('.ql_xl2').css('display')
 		if(c=='block'){
-			$('.ql_xl2').slideUp(800)
+			$('.ql_xl2').slideUp(600)
 			$('.jh2').removeClass('glyphicon glyphicon-minus').addClass('glyphicon glyphicon-plus')
 		}else{
-			$('.ql_xl2').slideDown(800)
+			$('.ql_xl2').slideDown(600)
 			$('.jh2').addClass('glyphicon glyphicon-minus')
 		}
 	})

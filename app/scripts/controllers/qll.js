@@ -13,6 +13,7 @@ angular.module('shop2App')
      
      $scope.uname='';
      $scope.pass='';
+
      $scope.qfn=function(){
      	if($scope.uname=='' || $scope.pass==''){
      		alert('请输入用户名和密码')
@@ -45,25 +46,54 @@ angular.module('shop2App')
      	}
      	
      }
-//   $scope.zc=function(){
-//   	if($scope.name=='' || $scope.pass==''){
-//   		alert('请输入用户名和密码')
-//   	}else{
-//   		$http({
-//	     		method:'post',
-//	     		url:'http://47.88.16.225:412/users',
-//	     		data:{
-//	     			username:$scope.name,password:$scope.pass
-//   		}
-//	     	}).then(function(e){
+
+     $scope.zc=function(){
+//   	var res = verifyCode.validate(document.getElementById("code_input").value);
+
+     	$('.abc').blur();
+			tot = 0;
+		$('.abc').each(function(){
+			tot+=$(this).data('s')
+		})	
+//			alert(tot)
+		if(tot!=2){
+			alert('资料不完整')
+				return false
+		}
+//		if(res){
+////			alert("验证正确");
+//		}else{
+//			alert("信息有误");
+//			return
+//		}
+     	if($scope.name=='' || $scope.pass==''){
+     		alert('请输入用户名和密码')   
+     	}else{
+     		$http({
+	     		method:'post',
+	     		url:'http://47.88.16.225:412/users',
+	     		data:{
+	     			username:$scope.name,password:$scope.pass
+     		}
+	     	}).then(function(e){
 //	     		alert('注册成功')
-//	     		$state.go('login')
-//				console.log(e)
-//	     	},function(){
-//	     		alert('error')
-//	     	})
-//   	}
-//   }
+
+				$('.row').html('注册成功')
+				$('.dl').css({"opacity":"1","top":"15px"})
+				$('.zhezao').css({"display":"block"})
+				setTimeout(function () {
+					 $(".dl").css({"opacity":"0"})
+					$('.zhezao').css({"display":"none"})
+					$state.go('login')
+				},1500);
+	     		
+				console.log(e)
+	     	},function(){
+	     		alert('注册失败')
+	     	})
+     	}
+     }
+
 	$scope.loginName="七年";
 	$scope.loginNan="男";
 	$scope.loginSheng="1998-02-03";
