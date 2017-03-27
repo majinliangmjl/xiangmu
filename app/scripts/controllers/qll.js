@@ -144,7 +144,11 @@ angular.module('shop2App')
 				},1500);
 				
 		     },function(){
+
+//		     	alert('error')
+
 		     	
+
 		     })
      	}
     	

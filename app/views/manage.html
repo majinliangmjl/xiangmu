@@ -2,19 +2,19 @@
 <div ng-controller="manage" class="zyx_box">
 <div class="zyx_sp">
 		<p class="zyx_p">审批管理</p>
-	    <p class="zyx_op">OPMS <i>/</i>审批管理 <i>/</i><span>报修</span></p>
+	    <p class="zyx_op">OPMS <i>/</i>审批管理 <i>/</i><span>报消</span></p>
 	  	    <a ui-sref="daishenpi" ng-click="dsp()">待审批</a>
-	  	    <a ui-sref="baoxiu">+我要报修</a>
+	  	    <a ui-sref="baoxiu">+我要报销</a>
 </div>
 <div class="zyx_center">
 	     <div class="zyx_center_top">
-	     	  <div class="zyx_zs">报修 <i>/</i>总数：1</div>
+	     	  <div class="zyx_zs">报销<i>/</i>总数</div>
 	     	  <img  ng-src="{{zyx}}" ng-click="img()"/>
 	     </div>
 	     <table border="" cellspacing="" cellpadding="" ng-show="isshow" class="zyx_table">
 	     	<tr>
 	     		<td>姓名</td>
-	     		<td>电话</td>
+	     		<td>金额</td>
 	     		<td>状态</td>
 	     		<td>操作</td>
 	     	</tr>
