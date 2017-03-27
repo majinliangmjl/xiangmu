@@ -1,10 +1,12 @@
-<div>
+<div  ng-controller="zxx_bm">
 	<div ng-include="'views/head_ql.html'"></div>
-<div class="zxx_tjxgg" ng-controller="zxx_bm">
-	<p>名称<input type="text" placeholder="请填写昵称" ng-model="zxx_tjbm_zw"></p>
-	<p>描述<textarea placeholder="请填写描述" ng-model="zxx_tjbm_zwms"></textarea></p>
-	<p>
-		<a ng-click="zxx_tjbm()"  class="btn btn-success">点击提交</a>
-	</p>
-</div>
+	<div class="zxx_tjxgg">
+		<p>名称<input type="text" placeholder="请填写昵称" ng-model="zxx_tjbm_zw"></p>
+		<p>描述<textarea placeholder="请填写描述" ng-model="zxx_tjbm_zwms"></textarea></p>
+		<p>
+			<a ng-click="zxx_tjbm()" class="btn btn-success">点击提交</a>
+		</p>
+	</div>
+	<div ng-hide="zxx_sr" ng-click="zxx_xs()" class="zxx_fu"></div>
+	<div ng-hide="zxx_sr" ng-click="zxx_xs()" class="zxx_zi">请输入内容</div>
 </div>
