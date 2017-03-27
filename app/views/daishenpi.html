@@ -15,15 +15,13 @@
 	     <table border="" cellspacing="" cellpadding="" ng-show="isshow">
 	     	<tr>
 	     		<td>姓名</td>
-	     		<td>电话</td>
+	     		<td>金额</td>
 	     		<td>状态</td>
 	     		<td>结果</td>
 	     	</tr>
 	     	<tr ng-repeat="a in data">
 	     		<td>{{a.uid}}</td>
 	     		<td>{{a.shouji}}</td>
-	     		
-	     		
 	     		<td>{{a.zhuangtai}}</td>
 	     		<td ui-sref="chakan({aaa:a.id})">查看</td>
 	     	</tr>
