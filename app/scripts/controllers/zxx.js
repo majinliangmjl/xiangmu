@@ -1,8 +1,7 @@
 angular.module('shop2App')
 	.controller("zxx_bm", ["$scope", "$http", "$state",function($scope, $http,$state) {
-
-		$scope.shangxia=true;
-		
+		//点击图片翻转
+		$scope.shangxia=true;		
 		$scope.zxx_sq = function() {
 			$scope.zxx_ul = !$scope.zxx_ul;
 			if($scope.shangxia){
@@ -11,20 +10,21 @@ angular.module('shop2App')
 				$scope.shangxia=true;
 			}
 		}
+		//获取服务器传送数据
 		$http({
 			url: "http://47.88.16.225:412/zhiwei",
 			method: 'get'
 		}).then(function(reqs) {
 			$scope.zhicheng = reqs.data
 		}, function() {})
-		$scope.zxx_tjbm_zw="";
-		$scope.zxx_tjbm_zwms="";
-		$scope.zhicheng=[];
 		
-		$scope.zxx_tjbm = function() {
-			
+		//向服务器传送数据  弹窗 
+		$scope.zxx_tjbm_zw="";
+		$scope.zxx_tjbm_zwms="";		
+		$scope.zxx_sr=true;
+		$scope.zxx_tjbm = function() {		
 			if($scope.zxx_tjbm_zw=="" || $scope.zxx_tjbm_zwms==""){
-				alert("请填写信息")
+				$scope.zxx_sr=false;
 			}else{
 				$http({
 				url: "http://47.88.16.225:412/zhiwei",
@@ -37,8 +37,12 @@ angular.module('shop2App')
 				$state.go("guanli") 
 			}, function() {})
 			}
-
 		}
+        
+        $scope.zxx_xs = function(){
+			$scope.zxx_sr=true
+		}
+        
         
 		$http({
 			url: "http://47.88.16.225:412/zhiwei",
@@ -76,10 +80,10 @@ angular.module('shop2App')
 		}, function() {})
 		$scope.zxx_tjgg_ms="";
 		$scope.zxx_tjgg_nc="";
-		$scope.zxx_tjgg = function() {
-			
+		$scope.zxx_sr=true;
+		$scope.zxx_tjgg = function() {			
 			if($scope.zxx_tjgg_ms==""||$scope.zxx_tjgg_nc==""){
-				alert("请输入内容")
+				$scope.zxx_sr=false
 			}else{
 				$http({
 				url: "http://47.88.16.225:412/gonggao",
@@ -94,6 +98,10 @@ angular.module('shop2App')
 			}, function() {})
 			}
 		}
+		$scope.zxx_xs = function(){
+			$scope.zxx_sr=true
+		}
+		
 		
 		$http({
 			url: "http://47.88.16.225:412/gonggao",
