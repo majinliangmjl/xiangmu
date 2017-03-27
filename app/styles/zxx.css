@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	font-family: "微软雅黑";
 }
 body{
 	background: #EFF0F4;
@@ -20,7 +21,8 @@ body{
 	margin: 0.575rem 0 0.425rem;
 }
 .zxx_bm .zxx_yggl p:nth-child(2){
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.7rem;
+	
 }
 .zxx_bm .zxx_yggl p:nth-child(2) span:nth-child(1){
 	padding-right: 0.4;
@@ -48,6 +50,9 @@ body{
 	padding: 0.5rem 0.3rem 0;
 	border-radius: 5px;
 	margin-bottom: 12rem;
+}
+.zxx_bm .zxx_tb table tr td{
+	line-height: 1.428rem;
 }
 .zxx_bm .zxx_tb p:nth-child(1){
 	font-weight: bold;
