@@ -1,12 +1,14 @@
 body,textarea,input,select,option{font-family:"微软雅黑";}
-body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,textarea,input,select,option,form{margin:0}
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,textarea,input,select,option,form{margin:0;border: 0;}
 th,td,ul,ol,textarea,input,select,option{padding:0}
 a{text-decoration:none;color:#333}a,textarea,input{outline:none}
 textarea{overflow:auto;resize:none}
 table{border-collapse:collapse}
 li{list-style:none}
 a img{border:none}
-
+html{
+	height: 30rem;
+}
 body{background-color:#fff;height: auto;}
 .fl{float:left}.fr{float:right}
 .clear{clear:both;height:0;overflow:hidden}
@@ -30,14 +32,14 @@ b{font-weight: normal;}*/
 	background:#fff;
 	position: fixed;
 	z-index: 300;
-	top: 0px;
+	top: -1px;
 }
 .qi_head_left{
 	width: 2.4rem;
-	height: 2.25rem;
+	height: 2.18rem;
 	border-right: #f1f1f1 solid 1px;
 	color: #333;
-	font-size: 1rem;
+	font-size: 0.6rem;
 	float: left;
 	text-align: center;
 	line-height: 2.25rem !important;
@@ -48,10 +50,11 @@ b{font-weight: normal;}*/
 			 	color: #fff;
 }
 .qi_head_right{
-	width: 7rem;
+	width: auto;
 	height: 2.25rem;
 	float: right;
 	display: -webkit-box;
+	margin-right: 0.8rem;
 }
 .ql_right1{
 	-webkit-box-flex: 1;
@@ -84,13 +87,12 @@ b{font-weight: normal;}*/
         -margin-right: 0.65rem;
     right: 0;
     display: block;
-    transition: 1s;
+    transition: 0.8s;
     overflow: hidden;
 }
 .ql_gr li{
-	line-height: 1.3rem;
-	font-size: 0.35rem;
-	    font-size: 0.45rem;
+	line-height: 1.8rem;
+	font-size: 0.55rem;
     color: #fff;
     text-align: center;
 }
@@ -106,7 +108,7 @@ b{font-weight: normal;}*/
 .jh{
 	position: absolute;
 	right: 0.55rem;
-	top: 0.78rem;
+	top: 0.74rem;
 	font-size: 0.5rem;
 	    font-size: 0.6rem;
     font-family: "微软雅黑";
@@ -114,7 +116,7 @@ b{font-weight: normal;}*/
 .jh2{
 	position: absolute;
 	right: 0.55rem;
-	top: 0.78rem;
+	top: 0.74rem;
 	font-size: 0.5rem;
 	    font-size: 0.6rem;
     font-family: "微软雅黑";
@@ -156,7 +158,7 @@ b{font-weight: normal;}*/
 }
 .ql_zc1_n span{
 	color: #fff;
-	font-size: 0.9rem;
+	font-size: 0.55rem;
 	margin-left: 0.2rem;
 }
 .ql_zc2{
@@ -184,7 +186,7 @@ b{font-weight: normal;}*/
 
 .ql_zy_cont{
 	width:100% ;
-	height: 48rem;
+	height: auto;
 	background: #EFF0F4;
 	overflow: hidden;
 	position: absolute;
@@ -205,7 +207,7 @@ b{font-weight: normal;}*/
 	left: 50%;right: 0;bottom: 0;top: 50%;
 	margin-top: -3.25rem;
 	margin-left: -3.25rem;
-	background:url(../images/i-6.jpg) no-repeat;
+	background:url(../images/tx.jpg) no-repeat;
 	background-size: 100% 100%;
 }
 .ql_cont_er{
@@ -215,7 +217,7 @@ b{font-weight: normal;}*/
 	margin: 0.8rem 0.65rem 0.8rem 0.65rem;
 }
 .ql_cont_er td{
-	height: 1.55rem;
+	height: 1.95rem;
 }
 .ql_cont_san{
 	height: auto;
@@ -255,4 +257,14 @@ background: rgba(102,204,153,1);
 
 .ql_xl p:hover{
 	background: #333;
+}
+.xg{
+	position: relative;
+}
+.xg_name{
+	color: red;
+	position: absolute;
+	    top: 1.5rem;
+    right: 0.5rem;
+    display: none;
 }

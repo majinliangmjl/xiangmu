@@ -1,34 +1,129 @@
 <div ng-controller="qll">
+	<div class="zhezao"></div>
 	<div ng-include="'views/head_ql.html'"></div>
-	<form>
-	  <div class="form-group">
+	<form style="margin-top: 2rem;">
+	  <div class="form-group xg">
 	    <label for="exampleInputEmail1">姓名</label>
-	    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入你的用户名" ng-model="xm" maxlength="4">
+	    <input type="text" class="form-control xgzl" id="exampleInputEmail1" name="xname" placeholder="请输入你的用户名" ng-model="xm" maxlength="3">
+	    <span class="xg_name">X 用户名至少6位</span>
 	  </div>
-	  <div class="form-group">
+	  <div class="form-group xg">
 	    <label for="exampleInputEmail1">性别</label>
-	    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入你的用户名" ng-model="nan" maxlength="1">
+	     <select name="position" class="form-control" name="x_xb" id="sex" ng-model="nan"> 
+            <option value="">请选择</option>
+            <option value="保密">保密</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+         </select>
+	  	<span class="xg_name">X 输入你的性别</span>
 	  </div>
-	  <div class="form-group">
+	  <div class="form-group xg">
 	    <label for="exampleInputPassword1">生日</label>
-	    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="输入你的生日" ng-model="sr">
+	    <input type="date" class="form-control"  id="exampleInputPassword1" name="x_sr" placeholder="例如1998-02-03" ng-model="sr" maxlength="10">
+	  	<span class="xg_name">X 请输入您的生日</span>
 	  </div>
-	  <div class="form-group">
+	  <div class="form-group xg">
 	    <label for="exampleInputPassword1">邮箱</label>
-	    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入你的邮箱" ng-model="yx">
+	    <input type="text" class="form-control xgzl" id="exampleInputPassword1" name="x_yx" placeholder="请输入你的邮箱" ng-model="yx">
+	  	<span class="xg_name">X 请输入您的邮箱</span>
 	  </div>
-	  <div class="form-group">
+	  <div class="form-group xg">
 	    <label for="exampleInputPassword1">手机号</label>
-	    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="请输入你的手机号" ng-model="sjh">
+	    <input type="text" class="form-control yzsj xgzl" id="exampleInputPassword1" name="x_sjh" placeholder="请输入你的手机号" ng-model="sjh" maxlength="11">
+	  	<span class="xg_name">X 请输入正确的手机号</span>
 	  </div>
-	  <div class="form-group">
+	  <div class="form-group xg">
 	    <label for="exampleInputPassword1">qq</label>
-	    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="请输入你的qq号" ng-model="qqh">
+	    <input type="number" class="form-control xgzl" id="exampleInputPassword1" name="x_qq" placeholder="请输入你的qq号" ng-model="qqh">
+	  	<span class="xg_name">X 至少输入6位</span>
 	  </div>
-	  <div class="form-group">
+	  <div class="form-group xg">
 	    <label for="exampleInputPassword1">住址</label>
-	    <textarea class="form-control" id="exampleInputtext1" placeholder="请" ng-model="zhuzhi"></textarea>
+	    <textarea class="form-control xgzl" id="exampleInputtext1" placeholder="请输入你的地址" name="x_zz" ng-model="zhuzhi"></textarea>
+	 	<span class="xg_name">X 最少不能低于8个字</span>
 	  </div>
-	  <button type="button" class="btn btn-success" ng-click="zlxg()">Submit</button>
+	  <button type="button" class="btn btn-success" id="xiugai" ng-click="zlxg()">点击修改</button>
 	</form>
+	<div class="dl">
+			<div class="modal-dialog modal-sm ddd" role="document">
+				<div class="modal-content text-center row" style="height: 35px;line-height: 36px;">
+					<button class="close"><span>&times;</span></button>
+					
+				</div>
+			</div>
+		</div>
 </div>
+<script>
+	$('input[name=xname]').blur(function(){
+		val = this.value;
+		if(val.length < 3 ){
+			$(this).next().show()
+			$(this).data({"s":0})
+		}else{
+			$(this).data({"s":1})
+			$(this).next().hide()
+		}
+	})
+//	$('select[name=x_xb]').blur(function(){
+//		val = this.option;
+//		if(val == '' ){
+//			$(this).next().show()
+//			$(this).data({"s":0})
+//		}else{
+//			$(this).data({"s":1})
+//			$(this).next().hide()
+//		}
+//	})
+//	$('input[name=x_sr]').blur(function(){
+//		val = this.value;
+//		if(val.length < 10 ){
+//			$(this).next().show()
+//			$(this).data({"s":0})
+//		}else{
+//			$(this).data({"s":1})
+//			$(this).next().hide()
+//		}
+//	})
+	$('input[name=x_yx]').blur(function(){
+		val = this.value;
+		var reg2=/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/
+		if(val.length < 10 || !reg2.test(val)){
+			$(this).next().show()
+			$(this).data({"s":0})
+		}else{
+			$(this).data({"s":1})
+			$(this).next().hide()
+		}
+	})
+	$('input[name=x_sjh]').blur(function(){
+		val = this.value;
+		var reg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/
+		if(val.length < 11 || !reg.test(val)){
+			$(this).next().show()
+			$(this).data({"s":0})
+		}else{
+			$(this).data({"s":1})
+			$(this).next().hide()
+		}
+	})
+	$('input[name=x_qq]').blur(function(){
+		val = this.value;
+		if(val.length < 6 ){
+			$(this).next().show()
+			$(this).data({"s":0})
+		}else{
+			$(this).data({"s":1})
+			$(this).next().hide()
+		}
+	})
+	$('textarea[name=x_zz]').blur(function(){
+		val = this.value;
+		if(val.length < 8 ){
+			$(this).next().show()
+			$(this).data({"s":0})
+		}else{
+			$(this).data({"s":1})
+			$(this).next().hide()
+		}
+	})
+</script>

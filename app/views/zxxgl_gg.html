@@ -2,20 +2,25 @@
 	<div ng-include="'views/head_ql.html'"></div>
 <div class="zxx_bm" ng-controller="zxx_gg">
 	<div class="zxx_yggl">
-		<p>员工管理</p>
+		<p>公告</p>
 		<p><span><a href="">OPMS</a></span> /<span><a href="">公告管理</a></span>/<span>公告</span><span ui-sref="tianjiagg">添加新公告</span></p>
 	</div>
 	<div class="zxx_tb">
-		<p>公告管理/总数:<span>{{}}</span>
-			<span ng-click="zxx_sq()" class="glyphicon glyphicon-chevron-down"></span>
+		<p>公告管理/总数:<span>{{products.length}}</span>
+			<span ng-class="shangxia?'glyphicon glyphicon-chevron-down':'glyphicon glyphicon-chevron-up'" ng-click="zxx_sq()" ></span>
 		</p>
-		<ul class="zxx_ul2" ng-hide="zxx_ul">
-			<li ><span>名称</span><span>描述</span><span>操作</span></li>
-			<li ng-repeat="a in products">
-				<span>{{a.biao}}</span>
-				<span>{{a.xiangqing}}</span>
-				<span class="glyphicon glyphicon-trash" ng-click='zx_remove($index)'></span></li>
-		</ul>
+		<table class="table table-hover table-bordered" ng-hide="zxx_ul">
+			<tr>
+				<td>名称</td>
+				<td>描述</td>
+				<td>操作</td>
+			</tr>
+			<tr ng-repeat="a in products">
+				<td>{{a.biao}}</td>
+				<td>{{a.xiangqing}}</td>
+				<td><a class="glyphicon glyphicon-trash" ng-click='zx_remove($index)'></a></td>
+			</tr>
+		</table>
 	</div>
 </div>
 <footer>2016&copy;Admin by Lock

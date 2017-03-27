@@ -9,50 +9,56 @@
 		 	  <div class="ql_cont_er">
 		 	  	  <table class="table table-hover" >
 		 	  	  	  <tr>
-		 	  	  	  	 <td style="text-align: left;">姓名</td>
-		 	  	  	  	 <td class="text-success"  style="text-align: left;">
-		 	  	  	  	 	<input type="text" ng-model="loginName"style="width: 10rem;background: none;border: none;" maxlength="4" />
+		 	  	  	  	 <td style="text-align: left;width: 0.6rem;vertical-align: inherit;">姓名</td>
+		 	  	  	  	 <td class="text-success"  style="text-align: left;vertical-align: inherit;">
+		 	  	  	  	 	{{loginName}}
+		 	  	  	  	 	<!--<input type="text" ng-model="loginName" style="width: 10rem;background: none;border: none;" maxlength="4" />-->
 		 	  	  	  	 </td>
 		 	  	  	  </tr>
 		 	  	  	  <tr>
-		 	  	  	  	 <td  style="text-align: left;">性别</td>
-		 	  	  	  	 <td class="text-success"  style="text-align: left;">
-		 	  	  	  	 	<input type="text" ng-model="loginNan" style="width: 10rem;background: none;border: none;" maxlength="1" />
+		 	  	  	  	 <td  style="text-align: left;vertical-align: inherit;">性别</td>
+		 	  	  	  	 <td class="text-success"  style="text-align: left;vertical-align: inherit;">
+		 	  	  	  	 	{{loginNan}}
+		 	  	  	  	 	<!--<input type="text" ng-model="loginNan" style="width: 10rem;background: none;border: none;" maxlength="1" />-->
 		 	  	  	  	 </td>
 		 	  	  	  </tr>
 		 	  	  	  <tr>
-		 	  	  	  	 <td  style="text-align: left;">生日</td>
-		 	  	  	  	 <td class="text-success"  style="text-align: left;">
-		 	  	  	  	 	<input type="text" ng-model="loginSheng" style="width: 10rem;background: none;border: none;" />
+		 	  	  	  	 <td  style="text-align: left;vertical-align: inherit;">生日</td>
+		 	  	  	  	 <td class="text-success"  style="text-align: left;vertical-align: inherit;">
+		 	  	  	  	 	{{loginSheng|limitTo:10}}
+		 	  	  	  	 	<!--<input type="text" ng-model="loginSheng" style="width: 10rem;background: none;border: none;" />-->
 		 	  	  	  	 
 		 	  	  	  	 </td>
 		 	  	  	  </tr>
 		 	  	  	  <tr>
-		 	  	  	  	 <td  style="text-align: left;">电话</td>
-		 	  	  	  	 <td class="text-success"  style="text-align: left;">
-		 	  	  	  	 	<input type="text" ng-model="loginTel" style="width: 10rem;background: none;border: none;" />
+		 	  	  	  	 <td  style="text-align: left;vertical-align: inherit;">电话</td>
+		 	  	  	  	 <td class="text-success"  style="text-align: left;vertical-align: inherit;">
+		 	  	  	  	 	{{loginTel}}
+		 	  	  	  	 	<!--<input type="text" ng-model="loginTel" style="width: 10rem;background: none;border: none;" />-->
 		 	  	  	  	 </td>
 		 	  	  	  </tr>
 		 	  	  	  <tr>
-		 	  	  	  	 <td  style="text-align: left;">邮箱</td>
-		 	  	  	  	 <td class="text-success"  style="text-align: left;">
-		 	  	  	  	 	<input type="text" ng-model="loginEmail" style="width: 10rem;background: none;border: none;" />
+		 	  	  	  	 <td  style="text-align: left;vertical-align: inherit;">邮箱</td>
+		 	  	  	  	
+		 	  	  	  	 <td class="text-success"  style="text-align: left;vertical-align: inherit;">
+		 	  	  	  	 	 {{loginEmail}}
+		 	  	  	  	 	<!--<input type="text" ng-model="loginEmail" style="width: 10rem;background: none;border: none;" />-->
 						</td>
 		 	  	  	  </tr>
 		 	  	  </table>
 		 	  </div>
 		 	  <div class="ql_cont_san" ng-controller="ds">
 		 	  		公告
-		 	  		<table class="table table-hover table-bordered">
+		 	  		<table class="table table-hover table-striped table-bordered table-condensed">
 		 	  			<tr>
-		 	  				<td>名称</td>
-		 	  				<td>描述</td>
-		 	  				<td>时间</td>
+		 	  				<td style="vertical-align: inherit;">名称</td>
+		 	  				<td style="vertical-align: inherit;">描述</td>
+		 	  				<td style="vertical-align: inherit;">时间</td>
 		 	  			</tr>
 		 	  			<tr ng-repeat="i in data">
-		 	  				<td>{{i.biao}}</td>
-		 	  				<td>{{i.xiangqing}}</td>
-		 	  				<td ng-bind="i.shijian | date:'yyyy年MM月dd日HH:mm:ss'"></td>
+		 	  				<td style="vertical-align: inherit;">{{i.biao}}</td>
+		 	  				<td style="vertical-align: inherit;">{{i.xiangqing}}</td>
+		 	  				<td ng-bind="i.shijian | date:'yyyy年MM月dd日HH:mm:ss'" style="vertical-align: inherit;"></td>
 		 	  			</tr>
 		 	  		</table>
 		 	  </div>	

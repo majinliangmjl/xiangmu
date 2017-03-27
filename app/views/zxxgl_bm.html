@@ -6,16 +6,22 @@
 		<p><span><a href="">OPMS</a></span> /<span><a href="">部门管理</a></span>/<span >部门</span><span ui-sref="tianjiabm">添加新部门</span></p>
 	</div>
 	<div class="zxx_tb">
-		<p>部门管理/总数:<span class=""></span>
-			<span ng-click="zxx_sq()" class="glyphicon glyphicon-chevron-down"></span>
+		<p>部门管理/总数:<span>{{zhicheng.length}}</span>
+			<span ng-click="zxx_sq()" ng-class="shangxia?'glyphicon glyphicon-chevron-down':'glyphicon glyphicon-chevron-up'"></span>
 		</p>
-		<ul class="zxx_ul2" ng-hide="zxx_ul">
-			<li ><span>职位</span><span>描述</span><span>操作</span></li>
-			<li ng-repeat="a in zhicheng">
-				<span>{{a.zhiwei}}</span>
-				<span>{{a.miaoshu}}</span>
-				<span><a ng-click='zx_remove($index)'>删除</a></span></li>
-		</ul>
+		
+		<table class="table table-hover table-bordered" ng-hide="zxx_ul">
+			<tr>
+				<td>名称</td>
+				<td>描述</td>
+				<td>操作</td>
+			</tr>
+			<tr ng-repeat="a in zhicheng">
+				<td>{{a.zhiwei}}</td>
+				<td>{{a.miaoshu}}</td>
+				<td><a class="glyphicon glyphicon-trash" ng-click='zx_remove($index)'></a></td>
+			</tr>
+		</table>
 	</div>
 	
 </div>
