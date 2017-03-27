@@ -81,7 +81,7 @@ angular.module('shop2App', ['ui.router'])
 			url: "/jiben",
 			templateUrl: "views/ql_jbzl.html"
 	})
-	$urlRouterProvider.when("", "/zc")
+	$urlRouterProvider.when("", "/login")
 
 
 }])
