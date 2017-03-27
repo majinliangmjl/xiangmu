@@ -23,18 +23,18 @@
                       <option value="其他" >其他</option>
                     </select>
                     <p>请假日期</p>
-                    <input class="zy-qjrq" ng-model="riqi" type="number" />
+                    <input class="zy-qjrq" ng-model="riqi" type="date" />
                     <p>请假天数</p>
                     <input class="zy-qjts" ng-model="tianshu"/>
                     <p>请假事由</p>
                     <textarea name="reason" placeholder="请假事由，如世界很大，我想出去走一走" style="height:200px;" class="zy-qjsm" ng-model="shiyou"></textarea>
                     <p>审批人</p>
-                      <select name="type" class="zy-qjsy" ng-model="shenpiren">
+                      <select name="type" class="zy-qjsy" ng-model="shenpiren" >
                       <option value="">请选择审批人</option>
-                      <option value="张毅" >张毅</option>
-                      <option value="张迎雪" >张迎雪</option>
+                      <option ng-repeat="a in respon" value="{{a.shenpiren}}" >{{a.shenpiren}}</option>
+                      <!--<option value="张迎雪" >张迎雪</option>
                       <option value="马金良" >马金良</option>
-                      <option value="齐龙龙" >齐龙龙</option>                  
+                      <option value="齐龙龙" >齐龙龙</option>                  -->
                     </select>
                     <br />
                     <p>请假人</p>

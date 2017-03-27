@@ -1,4 +1,5 @@
 <div  ng-controller="qll">
+	<div class="zhezao"></div>
 	<div class="ql_head">
 		 	 <div class="qi_head_left glyphicon glyphicon-align-justify" ng-click="wdzy()" ng-class="{red:isred}"></div>
 		 	  <div class="qi_head_right">
@@ -9,7 +10,7 @@
 		 	  	  	<div class="ql_gr">
 		 	  	  		<li ui-sref='index'><i class="fa-user"></i> 个人主页</a></li>
 				        <li ui-sref='jiben'><i class="fa-cog"></i> 修改资料</a></li>
-				        <li ui-sref='login'><i class="fa-sign-out"></i> 退出</a></li>
+				        <li ng-click="tuichu()"><i class="fa-sign-out"></i> 退出</a></li>
 
 		 	  	  	</div>
 		 	  	  </div>
@@ -61,6 +62,16 @@
 	 		 	  </ul>
 	 		 </div>
 		 </div>
+		 
+		 <div class="dl">
+			<div class="modal-dialog modal-sm ddd" role="document">
+				<div class="modal-content text-center row" style="height: 35px;line-height: 36px;">
+					<button class="close"><span>&times;</span></button>
+					
+				</div>
+			</div>
+		</div>
+		 
 </div>
 <div ui-view></div>
 
