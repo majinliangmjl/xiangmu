@@ -21,7 +21,7 @@ angular.module('shop2App')
 //	      	}
 	      }).then(function(e){
 	      		$scope.data=e.data
-	      		console.log($scope.data)
+//	      		console.log($scope.data)
 	      })
 	
 //	      }
