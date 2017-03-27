@@ -4,8 +4,10 @@
 		 	 <div class="qi_head_left glyphicon glyphicon-align-justify" ng-click="wdzy()" ng-class="{red:isred}"></div>
 		 	  <div class="qi_head_right">
 		 	  	  
-		 	  	  <div class="ql_right3" ng-click="q_xlt()">
-		 	  	  	<div class="ql_right2"></div>
+		 	  	  <div class="ql_right3" ng-click="q_xlt()" >
+		 	  	  	<div class="ql_right2" style="overflow: hidden;">
+		 	  	  		 <img src="{{a.base}}" ng-repeat="a in touxian" style="width: 100%;height: 100%;"/>
+		 	  	  	</div>
 		 	  	  	{{loginName}} <span class="caret"></span>
 		 	  	  	<div class="ql_gr">
 		 	  	  		<li ui-sref='index'><i class="fa-user"></i> 个人主页</a></li>
@@ -115,6 +117,16 @@
 			$('.ql_zc').css({"transform":"translateX(-7rem)"})
 		}else{
 			$('.ql_zc').css({"transform":"translateX(0px)"})
+		}
+	})
+	
+	var n = 1;
+	$('.ql_cont_one_tx').click(function(){
+		n++;
+		if(n%2==1){
+			$('.sctp').css({"transform":"translateY(0rem)"})
+		}else{
+			$('.sctp').css({"transform":"translateY(5.7rem)"})
 		}
 	})
 	

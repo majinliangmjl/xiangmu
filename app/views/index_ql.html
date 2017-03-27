@@ -4,8 +4,13 @@
 	 
 	 <div class="ql_zy_cont">
 		 	  <div class="ql_cont_one">
-		 	  	   <div class="ql_cont_one_tx"></div>
+		 	  	   <div class="ql_cont_one_tx">
+		 	  	   	    <img src="{{a.base}}" ng-repeat="a in touxian"/>
+		 	  	   </div>
 		 	  </div>
+		 	  <!--<ul ng-repeat="i in touxian">
+		 	  	<li><img src="{{i[3].base}}"/></li>
+		 	  </ul>-->
 		 	  <div class="ql_cont_er">
 		 	  	  <table class="table table-hover" >
 		 	  	  	  <tr>
@@ -66,6 +71,16 @@
 		 	  <div id="calendar"></div>
 		 </div>
 	  
+	    <div class="sctp">
+	    	<ul>
+	    		<li style="margin-top: 0;">
+	    			<a href="javascript:;" class="file" id="">选择文件
+					    <input type="file" name="" id="demo_input">
+					</a>
+	    		</li>
+	    		<li style="margin-bottom: 0;" ng-click="a()">确定</li>
+	    	</ul>
+	    </div>
 	 
 </div>
 <script> 
