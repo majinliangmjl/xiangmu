@@ -40,19 +40,23 @@
 			if(val.length < 6 ){
 				$(this).next().show()
 				$(this).data({"s":0})
+				$('input[name=uname]').css({"border":"red solid 1px"})
 			}else{
 				$(this).data({"s":1})
 				$(this).next().hide()
+				$('input[name=uname]').css({"border":"#ccc solid 1px"})
 			}
 		})
 		$('input[name=pass]').blur(function(){
 			val = this.value;
 			if(val.length < 8 ){
 				$(this).data({"s":0})
+				$('input[name=pass]').css({"border":"red solid 1px"})
 				$(this).next().show()
 			}else{
 				$(this).data({"s":1})
 				$(this).next().hide()
+				$('input[name=pass]').css({"border":"#ccc solid 1px"})
 			}
 		})
 		$('input[name=yzm]').blur(function(){
