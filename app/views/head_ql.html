@@ -1,12 +1,12 @@
-<div  ng-controller="qll">
+<div>
 	<div class="zhezao"></div>
 	<div class="ql_head">
 		 	 <div class="qi_head_left glyphicon glyphicon-align-justify" ng-click="wdzy()" ng-class="{red:isred}"></div>
 		 	  <div class="qi_head_right">
 		 	  	  
-		 	  	  <div class="ql_right3" ng-click="q_xlt()" >
+		 	  	  <div class="ql_right3" ng-click="q_xlt()" ng-controller="tx">
 		 	  	  	<div class="ql_right2" style="overflow: hidden;">
-		 	  	  		 <img src="{{a.base}}" ng-repeat="a in touxian" style="width: 100%;height: 100%;"/>
+		 	  	  		<img src="{{touxian}}" style="width: 100%; height: 100%;border: none;"/>
 		 	  	  	</div>
 		 	  	  	{{loginName}} <span class="caret"></span>
 		 	  	  	<div class="ql_gr">
@@ -23,7 +23,7 @@
 	 	<div class="ql_zc">
 	 		 <div class="ql_zc1">
 	 		 	 <div class="ql_zc1_n">
-	 		 	 	 <i><img src="images/ql_img.jpg"/></i>
+	 		 	 	 <i><img src="{{touxian}}"/></i>
 	 		 	 	 <span>{{loginName}}<br></span>
 	 		 	 	  
 	 		 	 </div>
@@ -73,6 +73,17 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="sctp">
+	    	<ul>
+	    		<li style="margin-top: 0;">
+	    			<a href="javascript:;" class="file" id="">选择文件
+					    <input type="file" name="" id="demo_input">
+					</a>
+	    		</li>
+	    		<li style="margin-bottom: 0;" ng-click="a()">确定</li>
+	    	</ul>
+	    </div>
 		 
 </div>
 <div ui-view></div>

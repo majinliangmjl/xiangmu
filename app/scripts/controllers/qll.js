@@ -12,7 +12,6 @@ angular.module('shop2App')
      
      $scope.uname='';
      $scope.pass='';
-
      $scope.qfn=function(){
      	if($scope.uname=='' || $scope.pass==''){
 //   		alert('请输入用户名和密码')
@@ -26,9 +25,12 @@ angular.module('shop2App')
 	     		}
 	     	}).then(function(e){
 //	     		alert('登录成功')
-	     		$scope.data=e.data					
+//				localStorage.uid = e.data.id
+	     		$scope.data=e.data	
+	     		console.log(e.data)
 					$('.dl').css({"opacity":"1","top":"1rem"})
 					$('.row').html('登录成功')
+					localStorage.uid = e.data.uid
 					localStorage.id=4;
 					$('.zhezao').css({"display":"block"})
 					setTimeout(function () {
@@ -77,9 +79,9 @@ angular.module('shop2App')
      		}
 	     	}).then(function(e){
 //	     		alert('注册成功')
-
+				
 				$('.row').html('注册成功')
-				localStorage.clear();
+				localStorage.setItem('uname',$('.zc_yh').val());
 				$('.dl').css({"opacity":"1","top":"1rem"})
 				$('.zhezao').css({"display":"block"})
 				setTimeout(function () {
@@ -191,15 +193,15 @@ angular.module('shop2App')
    if(localStorage.id!=4){
    		$state.go('login')
    }
-    
+    $scope.touxian=''
    $scope.a = function(){
    		alert(1)
 		$http({
-			url: "http://47.88.16.225:412/touxiang",
+			url: "http://47.88.16.225:412/users",
 			method:'get'
 		}).then(function(reqs) {
-			 $scope.touxian = reqs.data
-			 console.log(reqs.data)	
+			 $scope.touxian = reqs.data[0].base
+			 console.log(reqs.data[0].base)	
 			 $('.sctp').css({"transform":"translateY(5.7rem)"})
 		}, function() {
 					console.log("请求失败")
@@ -248,15 +250,15 @@ var Ainput = document.getElementById("demo_input");
 			$scope.img = this.result;
 			
 			$http({
-			url: "http://47.88.16.225:412/touxiang",
-			method:'post',
+				url:"http://47.88.16.225:412/users/"+localStorage.uid,
+			method:'put',
 			data:{
 				base : $scope.img,
 				}
 			}).then(function(reqs) {
 					alert("ok")
 					 console.log(reqs)
-					 
+//					 console.log(reqs.data.base)
 			}, function() {
 					console.log("请求失败")
 			})
