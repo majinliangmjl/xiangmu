@@ -65,10 +65,11 @@ b{font-weight: normal;}*/
 }
 .ql_right2{
 	width: 2.1rem;
+	margin-right: 0.4rem;
 	height: 2rem;
 	float: left;
 	background: url(../images/ql_img.jpg) no-repeat;
-	background-size: 1.2rem 1.2rem;
+	background-size: 1.4rem 1.2rem;
 	background-position: 0.45rem 0.5rem;
 }
 .ql_right3{
@@ -207,8 +208,13 @@ b{font-weight: normal;}*/
 	left: 50%;right: 0;bottom: 0;top: 50%;
 	margin-top: -3.25rem;
 	margin-left: -3.25rem;
-	background:url(../images/tx.jpg) no-repeat;
+	background: url(../images/tx.jpg) no-repeat;
 	background-size: 100% 100%;
+	overflow: hidden;
+}
+.ql_cont_one_tx img{
+	width: 100%;
+	height: 100%;
 }
 .ql_cont_er{
 	height: 10.2rem;
@@ -267,4 +273,61 @@ background: rgba(102,204,153,1);
 	    top: 1.5rem;
     right: 0.5rem;
     display: none;
+}
+.sctp{
+	width: 100%;
+	height: auto;
+	position: fixed;
+	bottom: 0;
+	z-index: 555;
+	box-shadow: 0 0 5px #939393;
+	background: white;
+	overflow: hidden;
+	padding: 0.5rem;
+	transition: 1s;
+    transform: translateY(5.7rem);
+}
+.sctp li{
+	width: 100%;
+	height: 2rem;
+	background: #424f63;
+	border-top: #f1f1f1 1px solid;
+	text-align: center;
+	line-height: 2rem;
+	color: #fff;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #424f63;
+    border-radius: 4px;
+    padding: 8px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.file input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #333;
+    text-decoration: none;
+}
+.sctp li:hover{
+	background: #AADFFD;
+    border-color: #78C3F3;
+    color: #333;
+    text-decoration: none;
 }

@@ -1,12 +1,5 @@
 angular.module("shop2App").controller('woyaoqingjia', ['$scope','$http','$location', function($scope,$http,$location){
-           $scope.qjlx=""
-           $scope.riqi=""
-           $scope.tianshu=""
-           $scope.shiyou=""
-           $scope.shenpiren=""
-           $scope.qjr=""
-           $scope.Submit=function(){
-            	if($scope.qjlx!=""&&$scope.riqi!=""&&$scope.tianshu!=""&&$scope.shiyou!=""&&$scope.shenpiren!=""&&$scope.qjr!=""){
+            $scope.Submit=function(){
                  $http({
                  	 url:"http://47.88.16.225:412/qingjia",
                  	 method:"post",
@@ -18,18 +11,5 @@ angular.module("shop2App").controller('woyaoqingjia', ['$scope','$http','$locati
                       console.log($scope.data)
                       $location.url("/qj")
                  })
-                 }else{
-                 	 alert("数据提交不完整")
-                 }
             }
-            
-            
-            
-              $http({
-                 	 url:"http://47.88.16.225:412/qingjia",
-                 	 method:"get",                	
-                 }).then(function(e){
-                      $scope.respon=e.data
-                     
-                 })
 }])
