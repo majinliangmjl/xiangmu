@@ -134,7 +134,7 @@ angular.module('shop2App')
 	     	}
 		     }).then(function(e){
 	//			console.log(e)
-				$('.dl').css({"opacity":"1","top":"5rem"})
+				$('.dl').css({"opacity":"1","top":"8.5rem"})
 				$('.row').html('修改成功')
 				$('.zhezao').css({"display":"block","height":"32rem"})
 				setTimeout(function () {
@@ -143,15 +143,11 @@ angular.module('shop2App')
 					$state.go('index')
 				},1500);
 				
-		     },function(){
-
-//		     	alert('error')
-
-		     	
-
-		     })
-     	}
-    	
+		    },function(){
+//		     	alert('error')		     	
+		    })
+     }
+   	
     }   
     
     $http({
@@ -196,22 +192,53 @@ angular.module('shop2App')
    		$state.go('login')
    }
     
-   /*头像修改*/
-  var input = document.getElementById("demo_input"); 
+   $scope.a = function(){
+   		alert(1)
+		$http({
+			url: "http://47.88.16.225:412/touxiang",
+			method:'get'
+		}).then(function(reqs) {
+			 $scope.touxian = reqs.data
+			 console.log(reqs.data)	
+			 $('.sctp').css({"transform":"translateY(5.7rem)"})
+		}, function() {
+					console.log("请求失败")
+		})
+	}
+    
+}])
+
+
+.controller('ds', ["$scope","$http","$state",function ($scope,$http,$state) {
+  	$http({
+		url: "http://47.88.16.225:412/gonggao",
+		method: 'get'
+	}).then(function(reqs) {
+//		console.log(reqs)
+		$scope.data = reqs.data
+	}, function() {
+		
+	})
+}])
+
+
+.controller('tx', ["$scope","$http","$state",function ($scope,$http,$state) {
+ /*头像修改*/
+var Ainput = document.getElementById("demo_input"); 
 //			var result= document.getElementById("result"); 
 //			var img_area = document.getElementById("img_area"); 
 			if ( typeof(FileReader) === 'undefined' ){ 
 			result.innerHTML = "抱歉，你的浏览器不支持 FileReader，请使用现代浏览器操作！"; 
-			input.setAttribute( 'disabled','disabled' ); 
+			Ainput.setAttribute( 'disabled','disabled' ); 
 			} else { 
-			input.addEventListener( 'change',readFile,false );} 
+			Ainput.addEventListener('change',readFile,false );} 
 			 
 			function readFile(){ 
 			var file = this.files[0]; 
 			//这里我们判断下类型如果不是图片就返回 去掉就可以上传任意文件 
 			if(!/image\/\w+/.test(file.type)){ 
-			alert("请确保文件为图像类型"); 
-			return false; 
+				alert("请确保文件为图像类型"); 
+				return false; 
 			} 
 			var reader = new FileReader(); 
 			reader.readAsDataURL(file); 
@@ -237,31 +264,5 @@ angular.module('shop2App')
 			}
 		} 
    
-   $scope.a = function(){
-   		alert(1)
-		$http({
-			url: "http://47.88.16.225:412/touxiang",
-			method:'get'
-		}).then(function(reqs) {
-			 $scope.touxian = reqs.data
-			 console.log(reqs.data)	
-			 $('.sctp').css({"transform":"translateY(5.7rem)"})
-		}, function() {
-					console.log("请求失败")
-		})
-	}
-  
-    
-}])
-.controller('ds', ["$scope","$http","$state",function ($scope,$http,$state) {
-  	$http({
-		url: "http://47.88.16.225:412/gonggao",
-		method: 'get'
-	}).then(function(reqs) {
-//		console.log(reqs)
-		$scope.data = reqs.data
-	}, function() {
-		
-	})
-}])
 
+}])
