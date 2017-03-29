@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="qll">
 	<div class="zhezao"></div>
 	<div class="ql_head">
 		 	 <div class="qi_head_left glyphicon glyphicon-align-justify" ng-click="wdzy()" ng-class="{red:isred}"></div>
@@ -21,7 +21,7 @@
 		 
 		 <div class="ql_cont" style="width: auto;float: left;">
 	 	<div class="ql_zc">
-	 		 <div class="ql_zc1">
+	 		 <div class="ql_zc1" ng-controller="tx">
 	 		 	 <div class="ql_zc1_n">
 	 		 	 	 <i><img src="{{touxian}}"/></i>
 	 		 	 	 <span>{{loginName}}<br></span>
@@ -74,16 +74,6 @@
 			</div>
 		</div>
 		
-		<div class="sctp">
-	    	<ul>
-	    		<li style="margin-top: 0;">
-	    			<a href="javascript:;" class="file" id="">选择文件
-					    <input type="file" name="" id="demo_input">
-					</a>
-	    		</li>
-	    		<li style="margin-bottom: 0;" ng-click="a()">确定</li>
-	    	</ul>
-	    </div>
 		 
 </div>
 <div ui-view></div>
@@ -135,9 +125,9 @@
 	$('.ql_cont_one_tx').click(function(){
 		n++;
 		if(n%2==1){
-			$('.sctp').css({"transform":"translateY(0rem)"})
+			$('.sctp').css({"transform":"translateY(4rem)"})
 		}else{
-			$('.sctp').css({"transform":"translateY(5.7rem)"})
+			$('.sctp').css({"transform":"translateY(0rem)"})
 		}
 	})
 	

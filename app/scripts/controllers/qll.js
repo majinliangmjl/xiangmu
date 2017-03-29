@@ -10,8 +10,10 @@ angular.module('shop2App')
      	$scope.isred3=!$scope.isred3;
      }
      
+     
      $scope.uname='';
      $scope.pass='';
+     $scope.uname=localStorage.uname;
      $scope.qfn=function(){
      	if($scope.uname=='' || $scope.pass==''){
 //   		alert('请输入用户名和密码')
@@ -26,19 +28,20 @@ angular.module('shop2App')
 	     	}).then(function(e){
 //	     		alert('登录成功')
 //				localStorage.uid = e.data.id
-	     		$scope.data=e.data	
-	     		console.log(e.data)
-					$('.dl').css({"opacity":"1","top":"1rem"})
-					$('.row').html('登录成功')
-					localStorage.uid = e.data.uid
-					localStorage.id=4;
-					$('.zhezao').css({"display":"block"})
+	     		$scope.data=e.data;	
+	     		console.log(e.data);
+					$('.dl').css({"opacity":"1","top":"1rem"});
+					$('.row').html('登录成功');
+					localStorage.uid = e.data.uid;
+					localStorage.id=4;					
+					$('.zhezao').css({"display":"block"});
 					setTimeout(function () {
-					    $(".dl").css({"opacity":"0"})
-					    $('.row').html('')
-					    $('.zhezao').css({"display":"none"})
-					    $state.go('index')
-					},2000);
+					    $(".dl").css({"opacity":"0"});
+					    $('.row').html('');
+					    $('.zhezao').css({"display":"none"});
+					    $state.go('index');
+					},2000);						
+					
 //				console.log(e)
 				localStorage.loginID=$scope.data.id
 	
@@ -193,20 +196,24 @@ angular.module('shop2App')
    if(localStorage.id!=4){
    		$state.go('login')
    }
-    $scope.touxian=''
-   $scope.a = function(){
-   		alert(1)
-		$http({
-			url: "http://47.88.16.225:412/users",
-			method:'get'
-		}).then(function(reqs) {
-			 $scope.touxian = reqs.data[0].base
-			 console.log(reqs.data[0].base)	
-			 $('.sctp').css({"transform":"translateY(5.7rem)"})
-		}, function() {
-					console.log("请求失败")
-		})
-	}
+   
+// $scope.a = function(){
+// 		alert(1)
+//		$http({
+//			url: "http://47.88.16.225:412/users/"+localStorage.uid,
+//			method:'get'
+//		}).then(function(reqs) {
+////			console.log(reqs)
+//			 $scope.touxian = reqs.data.base
+////			 localStorage.tx=reqs.data.base
+////			 console.log(reqs.data[0].base)	
+//			 $('.sctp').css({"transform":"translateY(5.7rem)"})
+//		}, function() {
+//		console.log("请求失败")
+//		})
+//	}
+   
+   
     
 }])
 
@@ -225,8 +232,21 @@ angular.module('shop2App')
 
 
 .controller('tx', ["$scope","$http","$state",function ($scope,$http,$state) {
+			$http({
+					url: "http://47.88.16.225:412/users/"+localStorage.uid,
+					method:'get'
+				}).then(function(reqs) {
+		//			console.log(reqs)
+					 $scope.touxian = reqs.data.base
+		//			 localStorage.tx=reqs.data.base
+		//			 console.log(reqs.data[0].base)	
+				}, function() {
+				console.log("请求失败")
+			})
+   
+	
  /*头像修改*/
-var Ainput = document.getElementById("demo_input"); 
+			var Ainput = document.getElementById("demo_input"); 
 //			var result= document.getElementById("result"); 
 //			var img_area = document.getElementById("img_area"); 
 			if ( typeof(FileReader) === 'undefined' ){ 
@@ -248,7 +268,9 @@ var Ainput = document.getElementById("demo_input");
 //			result.innerHTML = '<img src="'+this.result+'" alt=""/>'; 
 			//img_area.innerHTML = '<div class="sitetip">图片img标签展示：</div><img src="'+this.result+'" alt=""/>'; 
 			$scope.img = this.result;
-			
+			$('.jz_b').css({"display":"block"})
+			$('.zhezao').css({"display":"block"})
+			$('.sctp').css({"transform":"translateY(4rem)"})
 			$http({
 				url:"http://47.88.16.225:412/users/"+localStorage.uid,
 			method:'put',
@@ -256,15 +278,35 @@ var Ainput = document.getElementById("demo_input");
 				base : $scope.img,
 				}
 			}).then(function(reqs) {
-					alert("ok")
-					 console.log(reqs)
-//					 console.log(reqs.data.base)
+				console.log(reqs)
+				$('.wenzi').html('上传成功.....')
+				setTimeout(function () {
+					$('.jz_b').css({"display":"none"})
+					$('.zhezao').css({"display":"none"})
+					$('.sctp').css({"transform":"translateY(4rem)"})
+				},1000);
+					$http({
+						url: "http://47.88.16.225:412/users/"+localStorage.uid,
+						method:'get'
+					}).then(function(reqs) {
+			//			console.log(reqs)
+						 $scope.touxian = reqs.data.base
+			//			 localStorage.tx=reqs.data.base
+			//			 console.log(reqs.data[0].base)	
+					}, function() {
+					console.log("请求失败")
+					})
+				
+//				alert("ok")
 			}, function() {
 					console.log("请求失败")
 			})
 		
 			}
 		} 
+		
+		
+			
    
 
 }])
