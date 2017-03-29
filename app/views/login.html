@@ -96,23 +96,28 @@
 		})
 	</script>-->
 	<script>
+
 		$('input[name=uname]').blur(function(){
 			val = this.value;
 			if(val.length < 6 ){
 				$(this).next().show()
+				$('input[name=uname]').css({"border":"red solid 1px"})
 				$(this).data({"s":0})
 			}else{
 				$(this).data({"s":1})
 				$(this).next().hide()
+				$('input[name=uname]').css({"border":"#ccc solid 1px"})
 			}
 		})
 		$('input[name=pass]').blur(function(){
 			val = this.value;
 			if(val.length < 8 ){
+				$('input[name=pass]').css({"border":"red solid 1px"})
 				$(this).data({"s":0})
 				$(this).next().show()
 			}else{
 				$(this).data({"s":1})
+				$('input[name=pass]').css({"border":"#ccc solid 1px"})
 				$(this).next().hide()
 			}
 		})
