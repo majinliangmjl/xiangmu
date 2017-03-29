@@ -200,7 +200,17 @@ angular.module('shop2App')
    		$state.go('login')
    }
  
-
+	$http({
+					url: "http://47.88.16.225:412/users/"+localStorage.uid,
+					method:'get'
+				}).then(function(reqs) {
+		//			console.log(reqs)
+					 $scope.touxian = reqs.data.base
+		//			 localStorage.tx=reqs.data.base
+		//			 console.log(reqs.data[0].base)	
+				}, function() {
+				console.log("请求失败")
+			})
     
 }])
 
