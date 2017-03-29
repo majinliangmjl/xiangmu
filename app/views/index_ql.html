@@ -66,6 +66,28 @@
 		 	  		</table>
 		 	  </div>	
 		 	  
+		 	  <div class="ql_cont_san" ng-controller="zhuhu">		 	  	    
+		 	  	  <div class="container" style="padding: 0;">
+		 	  	     <div style="margin-right: 1.5rem;" class="pull-left">住户反映信息</div>
+		 	  	  	 <button class="btn btn-danger" style="margin-left: 0rem;margin-right: 0.5rem;" ng-click="weichuli()">未处理</button>
+		 	  	  	 <button class="btn btn-success" ng-click="yichuli()">已处理</button>
+		 	  	  </div>
+		 	  	  <table class="table table-hover table-bordered table-condensed">
+		 	  			<tr>
+		 	  				<td style="vertical-align: inherit;">姓名</td>
+		 	  				<td style="vertical-align: inherit;">内容</td>
+		 	  				<td style="vertical-align: inherit;">地址</td>
+		 	  				<td style="vertical-align: inherit;">电话</td>
+		 	  			</tr>
+		 	  			<tr ng-repeat="i in data">
+		 	  				<td style="vertical-align: inherit;">{{i.xingming}}</td>
+		 	  				<td style="vertical-align: inherit;">{{i.neirong}}</td>
+		 	  				<td style="vertical-align: inherit;">{{i.dizhi}}</td>
+		 	  				<td style="vertical-align: inherit;">{{i.dianhua}}</td>
+		 	  			</tr>
+		 	  		</table>
+		 	  </div>
+		 	  
 		 	  <div id="calendar"></div>
 		 </div>
 	  
