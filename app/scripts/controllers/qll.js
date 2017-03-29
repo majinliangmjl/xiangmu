@@ -84,7 +84,9 @@ angular.module('shop2App')
 //	     		alert('注册成功')
 				
 				$('.row').html('注册成功')
+				
 				localStorage.setItem('uname',$('.zc_yh').val());
+				
 				$('.dl').css({"opacity":"1","top":"1rem"})
 				$('.zhezao').css({"display":"block"})
 				setTimeout(function () {
@@ -96,6 +98,7 @@ angular.module('shop2App')
 				console.log(e)
 	     	},function(){
 	     		alert('注册失败')
+	     		
 	     	})
      	}
      }
@@ -196,6 +199,7 @@ angular.module('shop2App')
    if(localStorage.id!=4){
    		$state.go('login')
    }
+<<<<<<< HEAD
    
 // $scope.a = function(){
 // 		alert(1)
@@ -214,6 +218,33 @@ angular.module('shop2App')
 //	}
    
    
+=======
+    $scope.touxian=''
+    $http({
+			url: "http://47.88.16.225:412/users",
+			method:'get'
+		}).then(function(reqs) {
+			 $scope.touxian = reqs.data[0].base
+			 console.log(reqs.data[0].base)	
+			 $('.sctp').css({"transform":"translateY(5.7rem)"})
+		}, function() {
+					console.log("请求失败")
+		}) 
+		
+   $scope.a = function(){
+   		//alert(1)
+		$http({
+			url: "http://47.88.16.225:412/users",
+			method:'get'
+		}).then(function(reqs) {
+			 $scope.touxian = reqs.data[0].base
+			 console.log(reqs.data[0].base)	
+			 $('.sctp').css({"transform":"translateY(5.7rem)"})
+		}, function() {
+					console.log("请求失败")
+		})
+	}
+>>>>>>> origin/master
     
 }])
 

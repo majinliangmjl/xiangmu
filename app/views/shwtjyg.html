@@ -43,8 +43,12 @@
 				
 				
                     </select>
+               <div> <span ng-show="ku" style="color:red;">不能为空！</span></div>
+                    
                   </div>
+                  
                 </div>
+
                 <div> <b>帐号信息</b> </div>
                 <br />
                 <div class="form-group">
@@ -83,7 +87,7 @@
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">手机号码</label>
                   <div class="col-sm-10">
-                    <input type="text" name="phone"  id="phone" class="form-control" placeholder="手机号码" ng-model="phone">
+                    <input type="text" name="phone"  id="phone" class="form-control" placeholder="手机号码" ng-model="phone" ng-blur="p()">
                     <span ng-show="gh2" style="color:red;">手机号码不能为空!</span>
                     <span ng-show="gh5" style="color:red;">手机号码格式错误！!</span>
                   </div>
@@ -91,7 +95,7 @@
                 <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">住址</label>
                   <div class="col-sm-10">
-                    <input type="text" name="address" value="" class="form-control" placeholder="详情住址" ng-model="address">
+                    <input type="text" name="address" value="" class="form-control" placeholder="详情住址" ng-model="address" ng-blur="add()">
                     <span ng-show="gh" style="color:red;">地址不能为空!</span>
                   </div>
                 </div>
