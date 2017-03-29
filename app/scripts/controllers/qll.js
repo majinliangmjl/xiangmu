@@ -39,11 +39,11 @@ angular.module('shop2App')
 					    $(".dl").css({"opacity":"0"});
 					    $('.row').html('');
 					    $('.zhezao').css({"display":"none"});
-					    $state.go('index');
+					    $state.go('jiben');
 					},2000);						
 					
 //				console.log(e)
-				localStorage.loginID=$scope.data.id
+//				localStorage.loginID=$scope.data.id
 	
 	     	},function(){
 	     		alert('登录失败')
@@ -105,11 +105,11 @@ angular.module('shop2App')
 
 	/*资料修改*/
 
-	$scope.loginName="七年";
-	$scope.loginNan="男";
-	$scope.loginSheng="1998-02-03";
-	$scope.loginTel='15225505963';
-	$scope.loginEmail='958488568@qq.com';	
+//	$scope.loginName="七年";
+//	$scope.loginNan="男";
+//	$scope.loginSheng="1998-02-03";
+//	$scope.loginTel='15225505963';
+//	$scope.loginEmail='958488568@qq.com';	
 	$scope.xm='';$scope.nan='';$scope.sr='';$scope.yx='';
 	$scope.sjh='';$scope.qqh='';$scope.zhuzhi='';
     $scope.zlxg=function(){
@@ -129,7 +129,7 @@ angular.module('shop2App')
      	}else{
      		$http({
 		     method:'post',
-		     url:'http://47.88.16.225:412/jibenziliao',
+		     url: "http://47.88.16.225:412/users/"+localStorage.uid,
 		     data:{
 		     	xingming:$scope.xm,
 		     	xingbei:$scope.nan,
@@ -138,17 +138,23 @@ angular.module('shop2App')
 		     	shoujihao:$scope.sjh,
 		     	qq:$scope.qqh,
 		     	zhuzhi:$scope.zhuzhi,
-		     	uid:localStorage.loginID
+		     	uid:localStorage.uid
 	     	}
 		     }).then(function(e){
 	//			console.log(e)
+				
 				$('.dl').css({"opacity":"1","top":"8.5rem"})
 				$('.row').html('修改成功')
 				$('.zhezao').css({"display":"block","height":"32rem"})
 				setTimeout(function () {
-					$('.dl').css({"opacity":"0","top":"-60px"})
-					$('.zhezao').css({"display":"none"})
-					$state.go('index')
+					$('.dl').css({"opacity":"0","top":"-60px"});
+					$('.zhezao').css({"display":"none"});
+					$state.go('index');
+//					localStorage.setItem('xingming',$('.xingming').val());
+//					localStorage.setItem('xingbie',$('.xingbie').val());
+//					localStorage.setItem('sr',$('.sr').val());
+//					localStorage.setItem('dh',$('.dh').val());
+//					localStorage.setItem('youxiang',$('.youxiang').val());
 				},1500);
 				
 		    },function(){
@@ -160,20 +166,22 @@ angular.module('shop2App')
     
     $http({
 		     method:'get',
-		     url:'http://47.88.16.225:412/jibenziliao'
+		      url: "http://47.88.16.225:412/users/"+localStorage.uid,
     }).then(function(e){
 //  	console.log(e)
-			for (var k=0;k<e.data.length;k++) {
-				if(e.data[k].uid==localStorage.loginID){
-					$scope.loginQQ=e.data[k].qq;
-					$scope.loginNan=e.data[k].xingbei;
-					$scope.loginSheng=e.data[k].shengri;
-					$scope.loginTel=e.data[k].shoujihao;
-					$scope.loginName=e.data[k].xingming;
-					$scope.loginEmail=e.data[k].youxiang;
-					$scope.loginAdd=e.data[k].zhuzhi;		
-				}
-			}
+//			for (var k=0;k<e.data.length;k++) {
+//				if(e.data[k].uid==localStorage.uid){
+//					$scope.loginQQ=e.data[k].qq;
+//					$scope.loginNan=e.data[k].xingbei;
+//					$scope.loginSheng=e.data[k].shengri;
+//					$scope.loginTel=e.data[k].shoujihao;
+//					$scope.loginName=e.data[k].xingming;
+//					$scope.loginEmail=e.data[k].youxiang;
+//					$scope.loginAdd=e.data[k].zhuzhi;		
+//				}
+//			}
+		$scope.arr = e.data;
+		console.log($scope.arr)
 	},function(){
 	     	alert('error')
     })
