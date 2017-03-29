@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
-	<name>项目</name>
-=======
-
-	<name>xaingmu</name>
-
-	<name>xm</name>
-
->>>>>>> origin/master
+	<name>klxm</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,18 +14,4 @@
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
-<<<<<<< HEAD
-	<filteredResources>
-		<filter>
-			<id>1490528880782</id>
-			<name></name>
-			<type>26</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-node_modules</arguments>
-			</matcher>
-		</filter>
-	</filteredResources>
-=======
->>>>>>> origin/master
 </projectDescription>

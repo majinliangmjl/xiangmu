@@ -347,3 +347,22 @@ background: rgba(102,204,153,1);
     color: #333;
     text-decoration: none;
 }
+
+.jz_b{
+				width: 190px;height: 50px;
+				background: linear-gradient(#FAFAFA,#E7E7E7);
+				border: #ECECEC solid 1px;
+				  /*  box-shadow: 0px 2px 6px #998;*/
+				 position: absolute;
+   				top: 0px;left: 0;right: 0;bottom: 0;
+   				margin: auto;
+   				display: none;
+   				z-index: 500;
+   				border-radius: 3px;
+}
+.tu{
+				margin-top: 15px;display: block;float: left;margin-left: 22px;
+}
+.wenzi{
+				line-height: 50px;text-align: center;display: block;font-size: 12px;
+	}
