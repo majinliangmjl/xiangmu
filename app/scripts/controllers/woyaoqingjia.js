@@ -1,5 +1,13 @@
 angular.module("shop2App").controller('woyaoqingjia', ['$scope','$http','$location', function($scope,$http,$location){
+            $scope.qjlx=""
+            $scope.riqi=""
+            $scope.tianshu=""
+            $scope.shiyou=""
+            $scope.shenpiren=""
+            $scope.qjr=""
+            
             $scope.Submit=function(){
+            	if($scope.qjlx!=""&&$scope.riqi!=""&&$scope.tianshu!=""&&$scope.shiyou!=""&&$scope.shenpiren!=""&&$scope.qjr!=""){
                  $http({
                  	 url:"http://47.88.16.225:412/qingjia",
                  	 method:"post",
@@ -8,8 +16,11 @@ angular.module("shop2App").controller('woyaoqingjia', ['$scope','$http','$locati
                  	 }
                  }).then(function(e){
                       $scope.data=e.data
-                      console.log($scope.data)
+                     
                       $location.url("/qj")
                  })
+                 }else{
+                 	 alert('信息不能为空')
+                 }
             }
 }])
