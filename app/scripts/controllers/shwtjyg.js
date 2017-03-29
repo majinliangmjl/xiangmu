@@ -33,7 +33,10 @@
 				$scope.gh = false
 			}
 	}
+	
+						    
    $scope.check = function(){
+   	
 		if($scope.user == "" || $scope.phone == "" || $scope.zt == ""|| $scope.email == "" || $scope.address == "" || $scope.sex == ""){
 			
 			if($scope.zhiwei == ""){

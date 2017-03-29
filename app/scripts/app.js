@@ -83,5 +83,5 @@ angular.module('shop2App', ['ui.router'])
 	})
 	$urlRouterProvider.when("", "/login")
 
-
+ 							
 }])
