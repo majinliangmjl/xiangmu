@@ -154,3 +154,12 @@ footer a{
 	position:absolute ;
 	opacity: 1;
 }
+
+.zhuhu{
+	width: 100%;
+	overflow: hidden;
+	
+}
+.zhuhu img{
+	width:100%;
+}
