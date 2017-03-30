@@ -11,9 +11,9 @@ angular.module('shop2App')
      }
      
      
-     $scope.uname='';
-     $scope.pass='';
-     $scope.uname=localStorage.uname;
+     $scope.uname='wolibaobao';
+     $scope.pass='wolibaobao';
+     
      $scope.qfn=function(){
      	if($scope.uname=='' || $scope.pass==''){
 //   		alert('请输入用户名和密码')
@@ -84,14 +84,14 @@ angular.module('shop2App')
 //			alert("信息有误");
 //			return
 //		}
-     	if($scope.name=='' || $scope.pass==''){
+     	if($scope.name=='' || $scope.zcpass==''){
 //   		alert('请输入用户名和密码')   
      	}else{
      		$http({
 	     		method:'post',
 	     		url:'http://47.88.16.225:412/users',
 	     		data:{
-	     			username:$scope.name,password:$scope.pass
+	     			username:$scope.name,password:$scope.zcpass
      		}
 	     	}).then(function(e){
 //	     		alert('注册成功')
@@ -255,7 +255,7 @@ angular.module('shop2App')
 	})
 	$scope.weichuli=function(){
 		  $http({
-	      	url:'http://47.88.16.225:412/zhuhu?{"tz":"2"}',
+	      	url:'http://47.88.16.225:412/zhuhu?{"zt":"2"}',
 	      	method:"get",
 
 	      }).then(function(e){
@@ -265,7 +265,7 @@ angular.module('shop2App')
 	}
 	$scope.yichuli=function(){
 		  $http({
-	      	url:'http://47.88.16.225:412/zhuhu?{"zt":"嫖娼"}',
+	      	url:'http://47.88.16.225:412/zhuhu?{"neirong":"dd"}',
 	      	method:"get",
 
 	      }).then(function(e){
