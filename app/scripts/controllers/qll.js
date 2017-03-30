@@ -168,20 +168,8 @@ angular.module('shop2App')
 		     method:'get',
 		      url: "http://47.88.16.225:412/users/"+localStorage.uid,
     }).then(function(e){
-//  	console.log(e)
-//			for (var k=0;k<e.data.length;k++) {
-//				if(e.data[k].uid==localStorage.uid){
-//					$scope.loginQQ=e.data[k].qq;
-//					$scope.loginNan=e.data[k].xingbei;
-//					$scope.loginSheng=e.data[k].shengri;
-//					$scope.loginTel=e.data[k].shoujihao;
-//					$scope.loginName=e.data[k].xingming;
-//					$scope.loginEmail=e.data[k].youxiang;
-//					$scope.loginAdd=e.data[k].zhuzhi;		
-//				}
-//			}
 		$scope.arr = e.data;
-		console.log($scope.arr)
+//		console.log($scope.arr)
 	},function(){
 	     	alert('error')
     })
@@ -209,9 +197,9 @@ angular.module('shop2App')
    }
  
 	$http({
-					url: "http://47.88.16.225:412/users/"+localStorage.uid,
-					method:'get'
-				}).then(function(reqs) {
+			url: "http://47.88.16.225:412/users/"+localStorage.uid,
+			method:'get'
+	}).then(function(reqs) {
 		//			console.log(reqs)
 					 $scope.touxian = reqs.data.base
 		//			 localStorage.tx=reqs.data.base
@@ -222,7 +210,7 @@ angular.module('shop2App')
     
 }])
 
-
+/*公告展示*/
 .controller('ds', ["$scope","$http","$state",function ($scope,$http,$state) {
   	$http({
 		url: "http://47.88.16.225:412/gonggao",
@@ -235,7 +223,41 @@ angular.module('shop2App')
 	})
 }])
 
+/*住户反映*/
+.controller('zhuhu', ["$scope","$http","$state",function ($scope,$http,$state) {
+	$http({
+		url: "http://47.88.16.225:412/zhuhu",
+		method: 'get'
+	}).then(function(reqs) {
+//		console.log(reqs)
+		$scope.data = reqs.data
+//		console.log($scope.data)
+	}, function() {
+		
+	})
+	$scope.weichuli=function(){
+		  $http({
+	      	url:'http://47.88.16.225:412/zhuhu?{"tz":"2"}',
+	      	method:"get",
 
+	      }).then(function(e){
+	      		$scope.data=e.data
+	      		console.log($scope.data)
+	      })
+	}
+	$scope.yichuli=function(){
+		  $http({
+	      	url:'http://47.88.16.225:412/zhuhu?{"zt":"嫖娼"}',
+	      	method:"get",
+
+	      }).then(function(e){
+	      		$scope.data=e.data
+	      		console.log($scope.data)
+	      })
+	}
+}])
+
+/*头像修改*/
 .controller('tx', ["$scope","$http","$state",function ($scope,$http,$state) {
 			$http({
 					url: "http://47.88.16.225:412/users/"+localStorage.uid,

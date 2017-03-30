@@ -233,7 +233,7 @@ b{font-weight: normal;}*/
 	height: 100%;
 }
 .ql_cont_er{
-	height: 10.2rem;
+	height: auto;
 	background: #fff;
 	font-size: 0.525rem;
 	margin: 0.8rem 0.65rem 0.8rem 0.65rem;
