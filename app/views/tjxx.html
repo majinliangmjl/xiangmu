@@ -1,0 +1,83 @@
+<div class="tjxx" ng-controller="grxx">
+	
+	<hr />
+	<div class="panel-body" class="bo">
+              <form class="form-horizontal adminex-form ng-pristine ng-valid ng-valid-required ng-valid-maxlength ng-valid-email se" id="userprofile-form" novalidate="novalidate" ng-submit="check()" style="padding: 0;background:#fff;" name="myForm">
+                <div class="form-group">
+                	<br>
+                  <label class="col-sm-2 col-sm-2 control-label">姓名</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="user" value="" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required ng-valid-maxlength" placeholder="请填写用户名" ng-model="user" maxlength="4" required="">
+					<span style="color:red" ng-show="myForm.user.$dirty &amp;&amp; myForm.user.$invalid" class="ng-hide">
+					<span ng-show="myForm.user.$error.required" class="ng-hide">用户名是必须的。</span>
+                  	</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                	
+                  <label class="col-sm-2 col-sm-2 control-label">性别</label>
+                  <div class="col-sm-10">
+                    <select name="position" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="sex" > 
+                    	<option value="" selected="selected">请选择</option>
+                    	<option value="保密">保密</option>
+                      <option value="男">男</option>
+                      <option value="女">女</option>
+                    </select>
+                    <span ng-show="gh3" style="color:red;" class="ng-hide">请选择</span>
+                  </div>
+                </div>
+               
+                <div class="form-group">
+                  <label class="col-sm-2 col-sm-2 control-label">业主邮箱</label>
+                  <div class="col-sm-10">
+                    <input type="email" name="email" value="" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-email ng-valid-required" placeholder="" ng-model="email" id="email" required="">
+					<span style="color:red" ng-show="myForm.email.$dirty &amp;&amp; myForm.email.$invalid" class="ng-hide">
+					<span ng-show="myForm.email.$error.required" class="ng-hide">邮箱是必须的。</span>
+					<span ng-show="myForm.email.$error.email" class="ng-hide">非法的邮箱地址。</span>
+                  </span>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="col-sm-2 col-sm-2 control-label">手机号码</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="phone" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="手机号码" ng-model="phone" ng-blur="p()" id="pssj">
+                    <span ng-show="gh2" style="color:red;" class="ng-hide">手机号码不能为空!</span>
+                    <span ng-show="gh5" style="color:red;" class="ng-hide">手机号码格式错误！!</span>
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <label class="col-sm-2 col-sm-2 control-label">生日</label>
+                  <div class="col-sm-10">
+                    <input type="text" id="test1" name="sr" value="" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" ng-model="sr" ng-blur="srr1()">
+                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 col-sm-2 control-label">qq</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="qq" value="" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" ng-model="qq" id="qq" ng-blur="qq2()">
+                    <span ng-show="qq3" style="color:red;" class="ng-hide">qq格式错误 || 不能空！</span>
+                  </div>
+                </div>
+               
+               
+                <div class="form-group">
+                  <label class="col-sm-2 col-sm-2 control-label">地址</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" ng-model="dz">
+                    <span ng-show="gh" style="color:red;" class="ng-hide">地址不能为空!</span>
+                  </div>
+                </div>
+                
+                <div class="cen">
+                  <button class="tj" ng-click="tjxx()">添加信息</button>
+                </div>
+                
+                
+              </form>
+            </div>     
+            <div class="bnwk">
+            	不能为空！
+            </div>
+</div>
