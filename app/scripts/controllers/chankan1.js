@@ -20,4 +20,19 @@ console.log(id)
                       console.log($scope.data)
                  })
                }
+                 
+                 
+                 
+                             $scope.butongyi=function(){
+      $http({
+                   url:"http://47.88.16.225:412/qingjia/"+id,
+                   method:"put",
+                   data:{
+                     "zhuangtai":"不同意"
+                   }
+                 }).then(function(e){
+                      $scope.data=e.data
+                      console.log($scope.data)
+                 })
+               }
 }])
