@@ -29,8 +29,9 @@ angular.module('shop2App')
 //	     		alert('登录成功')
 //				localStorage.uid = e.data.id
 	     		$scope.data=e.data;	
+	     		console.log(e.data)
 				localStorage.uid = e.data.uid;
-	     				localStorage.id=4;	
+	     		localStorage.id=4;	
 					if($scope.uname=='wolibaobao'){
 						
 	     				$('.dl').css({"opacity":"1","top":"1rem"})
