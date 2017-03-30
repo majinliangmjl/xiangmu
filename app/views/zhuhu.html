@@ -1,49 +1,48 @@
 <div ng-controller="qll">
 
-<div class="zhezao"></div>
-<div class="ql_head_zhuhu" id="top_div" >
-		 	<span ng-click="tuichu()">退出账号</span>
-		 </div>
-<div class="zhuhu" style="padding-top: 1rem;">
-	<p>欢迎登陆小区物业</p>
-	<div class="ql_cont_san" ng-controller="ds" style="padding: 0;">
-		小区公告
-		<table class="table table-hover table-striped table-bordered table-condensed">
-			<tr>
-				<td style="vertical-align: inherit;">通知</td>
-				<td style="vertical-align: inherit;">时间</td>
-			</tr>
-			<tr ng-repeat="i in data">
-				<td style="vertical-align: inherit;">{{i.xiangqing}}</td>
-				<td ng-bind="i.shijian | date:'yyyy年MM月dd日'" style="vertical-align: inherit;"></td>
-			</tr>
-		</table>
+	<div class="zhezao"></div>
+	<div class="ql_head_zhuhu" id="top_div">
+		<span ng-click="tuichu()">退出账号</span>
 	</div>
-</div>
-<div ng-controller="zxx_gg" class="zxx_fw">
-	<p>有什么需要为您服务：</p>
-	<p>住址：<input type="text" ng-model="zxx_zhuzhi"/></p>
-	<p>电话：<input type="text" ng-model="zxx_phone"/></p>
-	<p>姓名：<input type="text" ng-model="zxx_name"/></p>
-	<p>内容：<textarea name="" rows="" cols="" ng-model="zxx_nr"></textarea></p>
-	
-	<div class="container" style="margin-top: 1rem;background:#fff ;" >
-		<button class="btn btn-success" ng-click="zxx_fw()">点击提交</button>
+	<div class="zhuhu" style="padding-top: 1rem;">
+		<p>欢迎登陆小区物业</p>
+		<div class="ql_cont_san" ng-controller="ds" style="padding: 0;">
+			小区公告
+			<table class="table table-hover table-striped table-bordered table-condensed">
+				<tr>
+					<td style="vertical-align: inherit;">通知</td>
+					<td style="vertical-align: inherit;">时间</td>
+				</tr>
+				<tr ng-repeat="i in data">
+					<td style="vertical-align: inherit;">{{i.xiangqing}}</td>
+					<td ng-bind="i.shijian | date:'yyyy年MM月dd日'" style="vertical-align: inherit;"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div ng-controller="zxx_gg" class="zxx_fw">
+		<p>有什么需要为您服务：</p>
+		<p>住址：<input type="text" ng-model="zxx_zhuzhi" /></p>
+		<p>电话：<input type="text" ng-model="zxx_phone" /></p>
+		<p>姓名：<input type="text" ng-model="zxx_name" /></p>
+		<p>内容：<textarea name="" rows="" cols="" ng-model="zxx_nr"></textarea></p>
+
+		<div class="container" style="margin-top: 1rem;background:#fff ;">
+			<button class="btn btn-success" ng-click="zxx_fw()">点击提交</button>
+		</div>
+
+		<div ng-hide="zxx_sr" ng-click="zxx_xs()" class="zxx_fu"></div>
+		<div ng-hide="zxx_sr" ng-click="zxx_xs()" class="zxx_zi">请输入内容</div>
+		<div ng-hide="zxx_rs" class="zxx_fu"></div>
+		<div ng-hide="zxx_rs" class="zxx_zi">已提交，请耐心等待服务人员</div>
 	</div>
 
-	<div ng-hide="zxx_sr" ng-click="zxx_xs()" class="zxx_fu"></div>
-	<div ng-hide="zxx_sr" ng-click="zxx_xs()" class="zxx_zi">请输入内容</div>
-	<div ng-hide="zxx_rs" class="zxx_fu"></div>
-	<div ng-hide="zxx_rs" class="zxx_zi">已提交，请耐心等待服务人员</div>
-</div>
+	<div class="dl">
+		<div class="modal-dialog modal-sm ddd" role="document">
+			<div class="modal-content text-center row" style="height: 35px;line-height: 36px;">
+				<button class="close"><span>&times;</span></button>
 
- <div class="dl">
-			<div class="modal-dialog modal-sm ddd" role="document">
-				<div class="modal-content text-center row" style="height: 35px;line-height: 36px;">
-					<button class="close"><span>&times;</span></button>
-					
-				</div>
 			</div>
 		</div>
-	
+	</div>
 </div>

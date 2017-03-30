@@ -157,4 +157,5 @@ angular.module('shop2App')
 				}, function() {})
 			}
 		}
+		
 	}])
