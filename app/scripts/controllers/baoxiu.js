@@ -4,8 +4,9 @@ angular.module('shop2App')
 		$scope.tel=""
 		$scope.num=""
 		$scope.xiangqing=""
+		$scope.jin=""
 	     $scope.zyx_bc=function(){
-	     	if($scope.xingming!=""&&$scope.tel!=""&&$scope.num!=""&&$scope.xiangqing!=""){
+	     	if($scope.xingming!=""&&$scope.num!=""&&$scope.xiangqing!=""&&$scope.jin!=""){
 	     	    $http({
 	      	url:"http://47.88.16.225:412/baoxiu",
 	      	method:"post",
