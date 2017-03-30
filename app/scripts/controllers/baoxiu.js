@@ -12,7 +12,6 @@ angular.module('shop2App')
 	      	data:{
 	      		"uid":$scope.xingming , "shouji":$scope.tel,"zhuzhi":$scope.num ,"xiangqing":$scope.xiangqing,"zhuangtai":"未处理"
 	      	}
-	      	
 	      }).then(function(e){
 	      		$scope.data=e.data
 	      		$location.url("/manage")
