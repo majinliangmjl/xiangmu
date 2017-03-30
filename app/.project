@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>klxm</name>
+	<name>app</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -10,19 +10,13 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>com.pandora.projects.ui.MKeyBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>com.pandora.projects.ui.MKeyNature</nature>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1490777602087</id>
+			<id>1490574158274</id>
 			<name></name>
 			<type>26</type>
 			<matcher>

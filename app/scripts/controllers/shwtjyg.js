@@ -9,7 +9,7 @@
 	 $scope.zhiwei = ""
  	 $scope.user = '用户名';
  	 
-   	 $scope.email = 'john.doe@gmail.com';
+   	$scope.email = 'john.doe@gmail.com';
 	$scope.p = function(){
 		var tel = $("#phone").val()	
 		var reg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/
@@ -33,7 +33,10 @@
 				$scope.gh = false
 			}
 	}
+	
+						    
    $scope.check = function(){
+   	
 		if($scope.user == "" || $scope.phone == "" || $scope.zt == ""|| $scope.email == "" || $scope.address == "" || $scope.sex == ""){
 			
 			if($scope.zhiwei == ""){

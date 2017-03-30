@@ -1,0 +1,55 @@
+.tj{
+	display: inline-block;
+    height: 2.5rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background: rgb(105, 185, 70);
+    font: 22px/2.5rem 微软雅黑;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    
+}
+
+.tjxx input{
+	background:#f8fdff;
+}
+.tjxx{
+	background: #f8fdff !important;
+}
+.se{
+	background: #f8fdff !important;
+}
+.bo{
+	width:80%;
+	text-indent:2rem;
+}
+.form-horizontal .form-group {
+    margin-right: -0px !important;
+     margin-left: -0px !important; 
+}
+.laydate_body .laydate_y .laydate_yms ul {
+    height: 139px;
+    overflow: hidden;
+    padding: 0;
+}
+.cen{
+	width:84vw;
+	margin: 0 auto;
+}
+.bnwk{
+	width: 6rem;
+    height: 2rem;
+    background: #9ec4e8;
+    border-radius: 5px;
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    display:none;
+}

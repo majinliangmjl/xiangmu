@@ -29,21 +29,34 @@ angular.module('shop2App')
 //	     		alert('登录成功')
 //				localStorage.uid = e.data.id
 	     		$scope.data=e.data;	
-	     		console.log(e.data);
-					$('.dl').css({"opacity":"1","top":"1rem"});
-					$('.row').html('登录成功');
-					localStorage.uid = e.data.uid;
-					localStorage.id=4;					
-					$('.zhezao').css({"display":"block"});
-					setTimeout(function () {
-					    $(".dl").css({"opacity":"0"});
-					    $('.row').html('');
-					    $('.zhezao').css({"display":"none"});
-					    $state.go('index');
-					},2000);						
+	     		console.log(e.data)
+				localStorage.uid = e.data.uid;
+	     		localStorage.id=4;	
+					if($scope.uname=='wolibaobao'){
+						
+	     				$('.dl').css({"opacity":"1","top":"1rem"})
+						$('.row').html('进入管理系统页面')
+						$('.zhezao').css({"display":"block"})
+						setTimeout(function () {
+						    $(".dl").css({"opacity":"0"})
+						    $('.row').html('')
+						    $('.zhezao').css({"display":"none"})
+						    $state.go('index')
+						},2000);						
+					}else{
+						$('.dl').css({"opacity":"1","top":"1rem"})
+						$('.row').html('进入住户页面')
+						$('.zhezao').css({"display":"block"})
+						setTimeout(function () {
+						    $(".dl").css({"opacity":"0"})
+						    $('.row').html('')
+						    $('.zhezao').css({"display":"none"})
+						    $state.go('zhuhu')
+						},2000);
+					}	
 					
 //				console.log(e)
-				localStorage.loginID=$scope.data.id
+//				localStorage.loginID=$scope.data.id
 	
 	     	},function(){
 	     		alert('登录失败')
@@ -105,11 +118,11 @@ angular.module('shop2App')
 
 	/*资料修改*/
 
-	$scope.loginName="七年";
-	$scope.loginNan="男";
-	$scope.loginSheng="1998-02-03";
-	$scope.loginTel='15225505963';
-	$scope.loginEmail='958488568@qq.com';	
+//	$scope.loginName="七年";
+//	$scope.loginNan="男";
+//	$scope.loginSheng="1998-02-03";
+//	$scope.loginTel='15225505963';
+//	$scope.loginEmail='958488568@qq.com';	
 	$scope.xm='';$scope.nan='';$scope.sr='';$scope.yx='';
 	$scope.sjh='';$scope.qqh='';$scope.zhuzhi='';
     $scope.zlxg=function(){
@@ -129,7 +142,7 @@ angular.module('shop2App')
      	}else{
      		$http({
 		     method:'post',
-		     url:'http://47.88.16.225:412/jibenziliao',
+		     url: "http://47.88.16.225:412/users/"+localStorage.uid,
 		     data:{
 		     	xingming:$scope.xm,
 		     	xingbei:$scope.nan,
@@ -138,17 +151,23 @@ angular.module('shop2App')
 		     	shoujihao:$scope.sjh,
 		     	qq:$scope.qqh,
 		     	zhuzhi:$scope.zhuzhi,
-		     	uid:localStorage.loginID
+		     	uid:localStorage.uid
 	     	}
 		     }).then(function(e){
 	//			console.log(e)
-				$('.dl').css({"opacity":"1","top":"8.5rem"})
+				
+				$('.dl').css({"opacity":"1","top":"1rem"})
 				$('.row').html('修改成功')
 				$('.zhezao').css({"display":"block","height":"32rem"})
 				setTimeout(function () {
-					$('.dl').css({"opacity":"0","top":"-60px"})
-					$('.zhezao').css({"display":"none"})
-					$state.go('index')
+					$('.dl').css({"opacity":"0","top":"-60px"});
+					$('.zhezao').css({"display":"none"});
+					$state.go('index');
+//					localStorage.setItem('xingming',$('.xingming').val());
+//					localStorage.setItem('xingbie',$('.xingbie').val());
+//					localStorage.setItem('sr',$('.sr').val());
+//					localStorage.setItem('dh',$('.dh').val());
+//					localStorage.setItem('youxiang',$('.youxiang').val());
 				},1500);
 				
 		    },function(){
@@ -160,20 +179,10 @@ angular.module('shop2App')
     
     $http({
 		     method:'get',
-		     url:'http://47.88.16.225:412/jibenziliao'
+		      url: "http://47.88.16.225:412/users/"+localStorage.uid,
     }).then(function(e){
-//  	console.log(e)
-			for (var k=0;k<e.data.length;k++) {
-				if(e.data[k].uid==localStorage.loginID){
-					$scope.loginQQ=e.data[k].qq;
-					$scope.loginNan=e.data[k].xingbei;
-					$scope.loginSheng=e.data[k].shengri;
-					$scope.loginTel=e.data[k].shoujihao;
-					$scope.loginName=e.data[k].xingming;
-					$scope.loginEmail=e.data[k].youxiang;
-					$scope.loginAdd=e.data[k].zhuzhi;		
-				}
-			}
+		$scope.arr = e.data;
+//		console.log($scope.arr)
 	},function(){
 //	     	alert('error')
     })
@@ -183,6 +192,7 @@ angular.module('shop2App')
 	  $('.dl').css({"opacity":"1","top":"1rem"})
 		$('.row').html('退出成功')
 		  localStorage.clear();
+//		  localStorage.zc=1;
 		$('.zhezao').css({"display":"block","height":"32rem"})
 		setTimeout(function () {
 			$('.dl').css({"opacity":"0","top":"-30px"})
@@ -191,9 +201,13 @@ angular.module('shop2App')
 		},1800);
    }
     
+   
    $scope.fan=function(){
      	localStorage.id=4
      	$state.go('zc')
+     	setTimeout(function(){
+     		localStorage.id=''
+     	},500)
    } 
     
    if(localStorage.id!=4){
@@ -201,9 +215,9 @@ angular.module('shop2App')
    }
  
 	$http({
-					url: "http://47.88.16.225:412/users/"+localStorage.uid,
-					method:'get'
-				}).then(function(reqs) {
+			url: "http://47.88.16.225:412/users/"+localStorage.uid,
+			method:'get'
+	}).then(function(reqs) {
 		//			console.log(reqs)
 					 $scope.touxian = reqs.data.base
 		//			 localStorage.tx=reqs.data.base
@@ -214,7 +228,7 @@ angular.module('shop2App')
     
 }])
 
-
+/*公告展示*/
 .controller('ds', ["$scope","$http","$state",function ($scope,$http,$state) {
   	$http({
 		url: "http://47.88.16.225:412/gonggao",
@@ -227,22 +241,42 @@ angular.module('shop2App')
 	})
 }])
 
+/*住户反映*/
+.controller('zhuhu', ["$scope","$http","$state",function ($scope,$http,$state) {
+	$http({
+		url: "http://47.88.16.225:412/zhuhu",
+		method: 'get'
+	}).then(function(reqs) {
+//		console.log(reqs)
+		$scope.data = reqs.data
+//		console.log($scope.data)
+	}, function() {
+		
+	})
+	$scope.weichuli=function(){
+		  $http({
+	      	url:'http://47.88.16.225:412/zhuhu?{"tz":"2"}',
+	      	method:"get",
 
+	      }).then(function(e){
+	      		$scope.data=e.data
+	      		console.log($scope.data)
+	      })
+	}
+	$scope.yichuli=function(){
+		  $http({
+	      	url:'http://47.88.16.225:412/zhuhu?{"zt":"嫖娼"}',
+	      	method:"get",
+
+	      }).then(function(e){
+	      		$scope.data=e.data
+	      		console.log($scope.data)
+	      })
+	}
+}])
+
+/*头像修改*/
 .controller('tx', ["$scope","$http","$state",function ($scope,$http,$state) {
-			$http({
-					url: "http://47.88.16.225:412/users/"+localStorage.uid,
-					method:'get'
-				}).then(function(reqs) {
-		//			console.log(reqs)
-					 $scope.touxian = reqs.data.base
-		//			 localStorage.tx=reqs.data.base
-		//			 console.log(reqs.data[0].base)	
-				}, function() {
-				console.log("请求失败")
-			})
-   
-	
- /*头像修改*/
 			var Ainput = document.getElementById("demo_input"); 
 //			var result= document.getElementById("result"); 
 //			var img_area = document.getElementById("img_area"); 
@@ -301,9 +335,4 @@ angular.module('shop2App')
 		
 			}
 		} 
-		
-		
-			
-   
-
 }])

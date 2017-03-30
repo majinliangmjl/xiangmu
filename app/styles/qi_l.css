@@ -233,7 +233,7 @@ b{font-weight: normal;}*/
 	height: 100%;
 }
 .ql_cont_er{
-	height: 10.2rem;
+	height: auto;
 	background: #fff;
 	font-size: 0.525rem;
 	margin: 0.8rem 0.65rem 0.8rem 0.65rem;
@@ -366,3 +366,14 @@ background: rgba(102,204,153,1);
 .wenzi{
 				line-height: 50px;text-align: center;display: block;font-size: 12px;
 	}
+.ql_head_zhuhu{
+	    width: 100%;
+    height: 1.6rem;
+    background: #F9F9F9;
+    position: fixed;
+    z-index: 300;
+    top: -1px;
+    text-align: right;
+    padding-right: 1rem;
+    line-height: 1.6rem;
+}
