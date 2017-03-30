@@ -85,6 +85,10 @@ angular.module('shop2App', ['ui.router'])
 			url: "/zhuhu",
 			templateUrl: "views/zhuhu.html"
 	})
+	.state("tjxx", {
+			url: "/tjxx",
+			templateUrl: "views/tjxx.html"
+	})
 	$urlRouterProvider.when("", "/login")
 
  							
