@@ -126,7 +126,7 @@ angular.module('shop2App')
 		$scope.zxx_rs = true
 		$scope.zxx_fw = function() {
 			if($scope.zxx_zhuzhi == "" || $scope.zxx_phone == "" || $scope.zxx_name == "" || $scope.zxx_nr == "") {
-				$scope.zxx_sr = false
+				alert('请输入内容')
 			} else {
 				$http({
 					url: "http://47.88.16.225:412/zhuhu",
@@ -144,11 +144,14 @@ angular.module('shop2App')
 					$scope.zxx_phone = "";
 					$scope.zxx_name = "";
 					$scope.zxx_nr = "";
-					$scope.zxx_rs = false
-					setTimeout(function(){
-						alert(1)
-						$scope.zxx_rs = true 
-					},200)
+					$('.dl').css({"opacity":"1","top":"1rem"});
+					$('.row').html('已提交，请耐心等待服务人员');			
+					$('.zhezao').css({"display":"block"});
+					setTimeout(function () {
+					    $(".dl").css({"opacity":"0"});
+					    $('.row').html('');
+					    $('.zhezao').css({"display":"none"});
+					},2000);
 					
 
 				}, function() {})

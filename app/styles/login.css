@@ -10,7 +10,7 @@
    				display: none;top: 0px;z-index: 351;
    			}
    			.dl{
-   				opacity: 0;transition: 0.8s;position: absolute;
+   				opacity: 0;transition: 0.8s;position: fixed;
    				top: -50px;left: 0;right: 0;
    				margin: auto;
    				z-index: 352;height: 1rem;

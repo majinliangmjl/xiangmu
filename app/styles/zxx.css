@@ -160,6 +160,11 @@ footer a{
 	height: 100%;
 	background: #fff;
 }
+.zxx_fw{
+	height: 100%;
+	background: #fff;
+	padding-bottom: 1rem;
+}
 .zxx_fw textarea{
 	width: 90%;
 	height: 3rem;
@@ -182,9 +187,16 @@ footer a{
 	font-size: 0.7rem;
 }
 .zxx_fw p,.zhuhu p{
-	font-size: 0.8rem;
-	text-indent: 0.5rem;
+	font-size: 0.625rem;
+	padding: 0.8rem 0.65rem 0 0.65rem;
 	line-height: 2rem;
+	background: #fff;
+}
+.zxx_fw input{
+	border: #ccc solid 1px;
+	width: 9rem;
+    height: 1.2rem;
+    margin-left: 0.7rem;
 }
 .zhuhu p:nth-child(1){
 	font-size: 1.2rem;

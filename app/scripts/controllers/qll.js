@@ -29,18 +29,30 @@ angular.module('shop2App')
 //	     		alert('登录成功')
 //				localStorage.uid = e.data.id
 	     		$scope.data=e.data;	
-	     		console.log(e.data);
-					$('.dl').css({"opacity":"1","top":"1rem"});
-					$('.row').html('登录成功');
-					localStorage.uid = e.data.uid;
-					localStorage.id=4;					
-					$('.zhezao').css({"display":"block"});
-					setTimeout(function () {
-					    $(".dl").css({"opacity":"0"});
-					    $('.row').html('');
-					    $('.zhezao').css({"display":"none"});
-					    $state.go('jiben');
-					},2000);						
+				localStorage.uid = e.data.uid;
+	     				localStorage.id=4;	
+					if($scope.uname=='wolibaobao'){
+						
+	     				$('.dl').css({"opacity":"1","top":"1rem"})
+						$('.row').html('进入管理系统页面')
+						$('.zhezao').css({"display":"block"})
+						setTimeout(function () {
+						    $(".dl").css({"opacity":"0"})
+						    $('.row').html('')
+						    $('.zhezao').css({"display":"none"})
+						    $state.go('index')
+						},2000);						
+					}else{
+						$('.dl').css({"opacity":"1","top":"1rem"})
+						$('.row').html('进入住户页面')
+						$('.zhezao').css({"display":"block"})
+						setTimeout(function () {
+						    $(".dl").css({"opacity":"0"})
+						    $('.row').html('')
+						    $('.zhezao').css({"display":"none"})
+						    $state.go('zhuhu')
+						},2000);
+					}	
 					
 //				console.log(e)
 //				localStorage.loginID=$scope.data.id
@@ -143,7 +155,7 @@ angular.module('shop2App')
 		     }).then(function(e){
 	//			console.log(e)
 				
-				$('.dl').css({"opacity":"1","top":"8.5rem"})
+				$('.dl').css({"opacity":"1","top":"1rem"})
 				$('.row').html('修改成功')
 				$('.zhezao').css({"display":"block","height":"32rem"})
 				setTimeout(function () {
@@ -171,7 +183,7 @@ angular.module('shop2App')
 		$scope.arr = e.data;
 //		console.log($scope.arr)
 	},function(){
-	     	alert('error')
+//	     	alert('error')
     })
     
     /*退出当前账户*/
@@ -179,6 +191,7 @@ angular.module('shop2App')
 	  $('.dl').css({"opacity":"1","top":"1rem"})
 		$('.row').html('退出成功')
 		  localStorage.clear();
+//		  localStorage.zc=1;
 		$('.zhezao').css({"display":"block","height":"32rem"})
 		setTimeout(function () {
 			$('.dl').css({"opacity":"0","top":"-30px"})
@@ -187,9 +200,13 @@ angular.module('shop2App')
 		},1800);
    }
     
+   
    $scope.fan=function(){
      	localStorage.id=4
      	$state.go('zc')
+     	setTimeout(function(){
+     		localStorage.id=''
+     	},500)
    } 
     
    if(localStorage.id!=4){
@@ -259,20 +276,6 @@ angular.module('shop2App')
 
 /*头像修改*/
 .controller('tx', ["$scope","$http","$state",function ($scope,$http,$state) {
-			$http({
-					url: "http://47.88.16.225:412/users/"+localStorage.uid,
-					method:'get'
-				}).then(function(reqs) {
-		//			console.log(reqs)
-					 $scope.touxian = reqs.data.base
-		//			 localStorage.tx=reqs.data.base
-		//			 console.log(reqs.data[0].base)	
-				}, function() {
-				console.log("请求失败")
-			})
-   
-	
- /*头像修改*/
 			var Ainput = document.getElementById("demo_input"); 
 //			var result= document.getElementById("result"); 
 //			var img_area = document.getElementById("img_area"); 
@@ -331,9 +334,4 @@ angular.module('shop2App')
 		
 			}
 		} 
-		
-		
-			
-   
-
 }])
